@@ -22,6 +22,7 @@ import gibsRoutes from './routes/gibs.js';
 import pdsRoutes from './routes/pds.js';
 import geocodingRoutes from './routes/geocoding.js';
 import authRoutes from './routes/auth.js';
+import { connectDatabase } from './services/database.js';
 
 const app = express();
 if (env.TRUST_PROXY_HOPS > 0) app.set('trust proxy', env.TRUST_PROXY_HOPS);
@@ -55,6 +56,15 @@ app.use(cors({
   allowedHeaders: ['Content-Type', 'X-Request-Id'],
   maxAge: 600,
 }));
+app.use(async (_req, _res, next) => {
+  try {
+    await connectDatabase();
+  } catch (error) {
+    const errorCode = error?.codeName || error?.code || error?.name || 'ConnectionError';
+    console.error(`MongoDB connection unavailable (${errorCode}).`);
+  }
+  next();
+});
 morgan.token('safe-url', (req) => req.originalUrl.split('?')[0]);
 app.use(morgan(':remote-addr :method :safe-url :status :response-time ms', {
   skip: (req) => req.path === '/api/health',
