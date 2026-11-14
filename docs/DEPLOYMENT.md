@@ -5,7 +5,7 @@ The client is a static Vite/React application and the Express API is exposed thr
 ## Vercel deployment
 
 1. Import the repository in Vercel and set **Root Directory** to the repository root (`.`). The client imports shared JSON files from the root-level `shared` directory, so Vercel must build from the monorepo root.
-2. The root `vercel.json` selects Vite, runs `npm run build`, publishes `client/dist`, and routes `/api/*` to the serverless Express handler in `api/[...path].js`.
+2. The root `vercel.json` selects Vite, builds only the `terra-client` workspace, publishes `client/dist`, and routes `/api/*` to the serverless Express handler in `api/[...path].js`.
 3. Set the Vercel project environment variables: `NODE_ENV=production`, `CLIENT_URL=https://terra-nasa.vercel.app`, `TRUST_PROXY_HOPS=1`, and `MONGODB_URI` to a TLS-enabled MongoDB Atlas URI. Add optional server-only integrations such as SMTP, Groq, NASA, and VAPID keys as needed.
 4. Leave `VITE_API_BASE_URL` empty because the browser and API share the same Vercel origin. Never put server secrets in a `VITE_` variable.
 5. Deploy. If the frontend domain changes, update `CLIENT_URL` to that exact origin and redeploy.
