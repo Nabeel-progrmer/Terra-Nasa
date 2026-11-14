@@ -1,43 +1,38 @@
 # Production deployment
 
-The client is a static Vite/React application and can be deployed on Vercel. The Express API starts a long-lived alert scheduler and uses process-local caches, so it should run as a separate persistent Node web service rather than being moved into Vercel Functions without a redesign.
+The client is a static Vite/React application and the Express API is exposed through a Vercel serverless function. The function reuses MongoDB connections while warm, but Vercel does not keep a process running between requests, so the periodic push-alert scheduler is not available in this deployment mode.
 
-## Vercel frontend
+## Vercel deployment
 
-1. Import the repository in Vercel and set **Root Directory** to `client`.
-2. Select the Vite preset. Use `npm run build` and `dist` if Vercel does not detect them automatically.
-3. Set the build environment variable `VITE_API_BASE_URL` to the HTTPS origin of the API service, for example `https://your-api.example.com`. This value is public configuration, not a secret.
-4. Deploy and note the final HTTPS frontend origin.
-5. Add the final origin (including any custom domain) to the API service's `CLIENT_URL`, then redeploy the API.
+1. Import the repository in Vercel and set **Root Directory** to the repository root (`.`). The client imports shared JSON files from the root-level `shared` directory, so Vercel must build from the monorepo root.
+2. The root `vercel.json` selects Vite, runs `npm run build`, publishes `client/dist`, and routes `/api/*` to the serverless Express handler in `api/[...path].js`.
+3. Set the Vercel project environment variables: `NODE_ENV=production`, `CLIENT_URL=https://terra-nasa.vercel.app`, `TRUST_PROXY_HOPS=1`, and `MONGODB_URI` to a TLS-enabled MongoDB Atlas URI. Add optional server-only integrations such as SMTP, Groq, NASA, and VAPID keys as needed.
+4. Leave `VITE_API_BASE_URL` empty because the browser and API share the same Vercel origin. Never put server secrets in a `VITE_` variable.
+5. Deploy. If the frontend domain changes, update `CLIENT_URL` to that exact origin and redeploy.
 
-`client/vercel.json` sends client-side routes to the SPA entry point. API calls use `VITE_API_BASE_URL`; no server secret belongs in a `VITE_` variable.
+`vercel.json` sends client-side routes to the SPA entry point. API calls use `VITE_API_BASE_URL`; no server secret belongs in a `VITE_` variable.
 
-## Express API on Render
+## Database and serverless limits
 
-The root `render.yaml` describes the existing long-running Express service. Create the service from the Blueprint and configure:
-
-- `CLIENT_URL`: the exact Vercel frontend origin, such as `https://your-project.vercel.app`.
-- `MONGODB_URI`: a TLS-enabled MongoDB Atlas URI for a least-privilege application user.
-- `TRUST_PROXY_HOPS`: keep the Blueprint's `1` only if Render is the sole trusted proxy; otherwise set the exact verified proxy-hop count.
-- Optional server-only integrations: `GROQ_API_KEY`, `NASA_API_KEY`, `VAPID_PUBLIC_KEY`, `VAPID_PRIVATE_KEY`, and `VAPID_SUBJECT`.
-
-The API health check uses `/api`, which confirms the process is responding without treating an optional provider or database outage as a failed process health check. Verify `/api/health` separately for database readiness after deployment.
+The API health check uses `/api/health`; verify MongoDB readiness after deployment. MongoDB Atlas must allow network access from Vercel's serverless functions, typically through the provider's documented IP access approach. Serverless process-local rate limits and provider caches are per instance and are not globally shared. Push subscriptions can be stored, but periodic alert delivery requires a separately scheduled job and is not run by the Express function.
 
 ## Required and optional configuration
 
 | Variable | Where | Purpose |
 | --- | --- | --- |
-| `VITE_API_BASE_URL` | Vercel build environment | Public HTTPS API origin used by the browser. |
-| `CLIENT_URL` | API service | Exact allowed frontend origin for CORS. |
-| `MONGODB_URI` | API service secret store | Database connection; required by the existing production startup validation. |
-| `GROQ_API_KEY` | API service secret store | Optional server-side Guide generation. |
-| `NASA_API_KEY` | API service secret store | Optional higher NASA NeoWs quota. |
-| `VAPID_PUBLIC_KEY`, `VAPID_PRIVATE_KEY`, `VAPID_SUBJECT` | API service configuration | Optional push-alert delivery. Never expose the private key to the frontend. |
+| `NODE_ENV` | Vercel server environment | Set to `production`. |
+| `TRUST_PROXY_HOPS` | Vercel server environment | Set to `1` for Vercel's proxy. |
+| `VITE_API_BASE_URL` | Vercel build environment | Leave empty when frontend and API share the Vercel origin. |
+| `CLIENT_URL` | Vercel server environment | Exact allowed frontend origin for CORS. |
+| `MONGODB_URI` | Vercel server environment | TLS-enabled database connection for persistence and accounts. |
+| `GROQ_API_KEY` | Vercel server environment | Optional server-side Guide generation. |
+| `NASA_API_KEY` | Vercel server environment | Optional higher NASA NeoWs quota. |
+| `VAPID_PUBLIC_KEY`, `VAPID_PRIVATE_KEY`, `VAPID_SUBJECT` | Vercel server environment | Push subscription configuration; never expose the private key to the frontend. Periodic delivery needs a separate scheduler. |
 
-Use the variable names in [`.env.example`](../.env.example) as the complete application configuration reference. Never put database credentials, Groq keys, NASA keys, or the VAPID private key in Vercel client variables or source control. Configure HTTPS, Atlas network access/backups, and provider credentials in their respective dashboards.
+Use the variable names in [`.env.example`](../.env.example) as the complete application configuration reference. Never put database credentials, Groq keys, NASA keys, SMTP credentials, or the VAPID private key in `VITE_` variables or source control. Configure HTTPS, Atlas network access/backups, and provider credentials in Vercel's encrypted environment settings.
 
 ## Verification and limitations
 
 After deployment, verify the client routes, `/api/health`, CORS from the deployed origin, MongoDB readiness, and each configured provider independently. Test PWA installation on actual supported devices and test offline behavior after the first successful load. API data is not available offline.
 
-No deployment has been run or verified from this workspace. Production credentials, Atlas access, Vercel/Render project access, final domains, and physical devices were not provided.
+The build can be verified from this workspace, but live Vercel deployment, production credentials, Atlas access, and device-specific PWA behavior must be verified in their respective environments.
