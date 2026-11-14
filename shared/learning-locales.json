@@ -1,0 +1,400 @@
+[
+  {
+    "locale": "en-US",
+    "language": "English",
+    "nativeName": "English",
+    "direction": "ltr",
+    "documentation": "Canonical source — code-verified",
+    "interface": "Canonical English"
+  },
+  {
+    "locale": "en-GB",
+    "language": "English",
+    "nativeName": "English (UK)",
+    "direction": "ltr",
+    "documentation": "Canonical source — code-verified",
+    "interface": "Canonical English"
+  },
+  {
+    "locale": "ur-PK",
+    "language": "Urdu",
+    "nativeName": "اردو (پاکستان)",
+    "direction": "rtl",
+    "documentation": "Draft: Getting started translated; native review needed",
+    "interface": "Draft: shared UI and Learning Center translated; native review needed"
+  },
+  {
+    "locale": "ar",
+    "language": "Arabic",
+    "nativeName": "العربية",
+    "direction": "rtl",
+    "documentation": "Not yet translated",
+    "interface": "The selected language is not fully translated yet. Untranslated pages remain in English."
+  },
+  {
+    "locale": "ar-EG",
+    "language": "Arabic",
+    "nativeName": "العربية (مصر)",
+    "direction": "rtl",
+    "documentation": "Not yet translated"
+  },
+  {
+    "locale": "zh-Hans",
+    "language": "Chinese",
+    "nativeName": "简体中文",
+    "direction": "ltr",
+    "documentation": "Not yet translated"
+  },
+  {
+    "locale": "zh-Hant",
+    "language": "Chinese",
+    "nativeName": "繁體中文",
+    "direction": "ltr",
+    "documentation": "Not yet translated"
+  },
+  {
+    "locale": "es-ES",
+    "language": "Spanish",
+    "nativeName": "Español (España)",
+    "direction": "ltr",
+    "documentation": "Not yet translated",
+    "interface": "The selected language is not fully translated yet. Untranslated pages remain in English."
+  },
+  {
+    "locale": "es-MX",
+    "language": "Spanish",
+    "nativeName": "Español (México)",
+    "direction": "ltr",
+    "documentation": "Not yet translated"
+  },
+  {
+    "locale": "fr-FR",
+    "language": "French",
+    "nativeName": "Français",
+    "direction": "ltr",
+    "documentation": "Not yet translated"
+  },
+  {
+    "locale": "de-DE",
+    "language": "German",
+    "nativeName": "Deutsch",
+    "direction": "ltr",
+    "documentation": "Not yet translated"
+  },
+  {
+    "locale": "pt-BR",
+    "language": "Portuguese",
+    "nativeName": "Português (Brasil)",
+    "direction": "ltr",
+    "documentation": "Not yet translated"
+  },
+  {
+    "locale": "pt-PT",
+    "language": "Portuguese",
+    "nativeName": "Português (Portugal)",
+    "direction": "ltr",
+    "documentation": "Not yet translated"
+  },
+  {
+    "locale": "ru-RU",
+    "language": "Russian",
+    "nativeName": "Русский",
+    "direction": "ltr",
+    "documentation": "Not yet translated"
+  },
+  {
+    "locale": "ja-JP",
+    "language": "Japanese",
+    "nativeName": "日本語",
+    "direction": "ltr",
+    "documentation": "Not yet translated",
+    "interface": "The selected language is not fully translated yet. Untranslated pages remain in English."
+  },
+  {
+    "locale": "ko-KR",
+    "language": "Korean",
+    "nativeName": "한국어",
+    "direction": "ltr",
+    "documentation": "Not yet translated"
+  },
+  {
+    "locale": "hi-IN",
+    "language": "Hindi",
+    "nativeName": "हिन्दी",
+    "direction": "ltr",
+    "documentation": "Not yet translated"
+  },
+  {
+    "locale": "bn-BD",
+    "language": "Bengali",
+    "nativeName": "বাংলা (বাংলাদেশ)",
+    "direction": "ltr",
+    "documentation": "Not yet translated"
+  },
+  {
+    "locale": "pa-IN",
+    "language": "Punjabi",
+    "nativeName": "ਪੰਜਾਬੀ",
+    "direction": "ltr",
+    "documentation": "Not yet translated"
+  },
+  {
+    "locale": "sd-PK",
+    "language": "Sindhi",
+    "nativeName": "سنڌي",
+    "direction": "rtl",
+    "documentation": "Not yet translated"
+  },
+  {
+    "locale": "tr-TR",
+    "language": "Turkish",
+    "nativeName": "Türkçe",
+    "direction": "ltr",
+    "documentation": "Not yet translated"
+  },
+  {
+    "locale": "fa-IR",
+    "language": "Persian",
+    "nativeName": "فارسی",
+    "direction": "rtl",
+    "documentation": "Not yet translated"
+  },
+  {
+    "locale": "id-ID",
+    "language": "Indonesian",
+    "nativeName": "Bahasa Indonesia",
+    "direction": "ltr",
+    "documentation": "Not yet translated"
+  },
+  {
+    "locale": "ms-MY",
+    "language": "Malay",
+    "nativeName": "Bahasa Melayu",
+    "direction": "ltr",
+    "documentation": "Not yet translated"
+  },
+  {
+    "locale": "sw-KE",
+    "language": "Swahili",
+    "nativeName": "Kiswahili",
+    "direction": "ltr",
+    "documentation": "Not yet translated"
+  },
+  {
+    "locale": "it-IT",
+    "language": "Italian",
+    "nativeName": "Italiano",
+    "direction": "ltr",
+    "documentation": "Not yet translated"
+  },
+  {
+    "locale": "nl-NL",
+    "language": "Dutch",
+    "nativeName": "Nederlands",
+    "direction": "ltr",
+    "documentation": "Not yet translated"
+  },
+  {
+    "locale": "pl-PL",
+    "language": "Polish",
+    "nativeName": "Polski",
+    "direction": "ltr",
+    "documentation": "Not yet translated"
+  },
+  {
+    "locale": "uk-UA",
+    "language": "Ukrainian",
+    "nativeName": "Українська",
+    "direction": "ltr",
+    "documentation": "Not yet translated"
+  },
+  {
+    "locale": "th-TH",
+    "language": "Thai",
+    "nativeName": "ไทย",
+    "direction": "ltr",
+    "documentation": "Not yet translated"
+  },
+  {
+    "locale": "vi-VN",
+    "language": "Vietnamese",
+    "nativeName": "Tiếng Việt",
+    "direction": "ltr",
+    "documentation": "Not yet translated"
+  },
+  {
+    "locale": "ta-IN",
+    "language": "Tamil",
+    "nativeName": "தமிழ்",
+    "direction": "ltr",
+    "documentation": "Not yet translated"
+  },
+  {
+    "locale": "te-IN",
+    "language": "Telugu",
+    "nativeName": "తెలుగు",
+    "direction": "ltr",
+    "documentation": "Not yet translated"
+  },
+  {
+    "locale": "mr-IN",
+    "language": "Marathi",
+    "nativeName": "मराठी",
+    "direction": "ltr",
+    "documentation": "Not yet translated"
+  },
+  {
+    "locale": "gu-IN",
+    "language": "Gujarati",
+    "nativeName": "ગુજરાતી",
+    "direction": "ltr",
+    "documentation": "Not yet translated"
+  },
+  {
+    "locale": "ps-AF",
+    "language": "Pashto",
+    "nativeName": "پښتو",
+    "direction": "rtl",
+    "documentation": "Not yet translated"
+  },
+  {
+    "locale": "ne-NP",
+    "language": "Nepali",
+    "nativeName": "नेपाली",
+    "direction": "ltr",
+    "documentation": "Not yet translated"
+  },
+  {
+    "locale": "si-LK",
+    "language": "Sinhala",
+    "nativeName": "සිංහල",
+    "direction": "ltr",
+    "documentation": "Not yet translated"
+  },
+  {
+    "locale": "he-IL",
+    "language": "Hebrew",
+    "nativeName": "עברית",
+    "direction": "rtl",
+    "documentation": "Not yet translated"
+  },
+  {
+    "locale": "el-GR",
+    "language": "Greek",
+    "nativeName": "Ελληνικά",
+    "direction": "ltr",
+    "documentation": "Not yet translated"
+  },
+  {
+    "locale": "sv-SE",
+    "language": "Swedish",
+    "nativeName": "Svenska",
+    "direction": "ltr",
+    "documentation": "Not yet translated"
+  },
+  {
+    "locale": "nb-NO",
+    "language": "Norwegian",
+    "nativeName": "Norsk Bokmål",
+    "direction": "ltr",
+    "documentation": "Not yet translated"
+  },
+  {
+    "locale": "da-DK",
+    "language": "Danish",
+    "nativeName": "Dansk",
+    "direction": "ltr",
+    "documentation": "Not yet translated"
+  },
+  {
+    "locale": "fi-FI",
+    "language": "Finnish",
+    "nativeName": "Suomi",
+    "direction": "ltr",
+    "documentation": "Not yet translated"
+  },
+  {
+    "locale": "ro-RO",
+    "language": "Romanian",
+    "nativeName": "Română",
+    "direction": "ltr",
+    "documentation": "Not yet translated"
+  },
+  {
+    "locale": "hu-HU",
+    "language": "Hungarian",
+    "nativeName": "Magyar",
+    "direction": "ltr",
+    "documentation": "Not yet translated"
+  },
+  {
+    "locale": "cs-CZ",
+    "language": "Czech",
+    "nativeName": "Čeština",
+    "direction": "ltr",
+    "documentation": "Not yet translated"
+  },
+  {
+    "locale": "sk-SK",
+    "language": "Slovak",
+    "nativeName": "Slovenčina",
+    "direction": "ltr",
+    "documentation": "Not yet translated"
+  },
+  {
+    "locale": "hr-HR",
+    "language": "Croatian",
+    "nativeName": "Hrvatski",
+    "direction": "ltr",
+    "documentation": "Not yet translated"
+  },
+  {
+    "locale": "sr-RS",
+    "language": "Serbian",
+    "nativeName": "Српски",
+    "direction": "ltr",
+    "documentation": "Not yet translated"
+  },
+  {
+    "locale": "bg-BG",
+    "language": "Bulgarian",
+    "nativeName": "Български",
+    "direction": "ltr",
+    "documentation": "Not yet translated"
+  },
+  {
+    "locale": "am-ET",
+    "language": "Amharic",
+    "nativeName": "አማርኛ",
+    "direction": "ltr",
+    "documentation": "Not yet translated"
+  },
+  {
+    "locale": "yo-NG",
+    "language": "Yoruba",
+    "nativeName": "Èdè Yorùbá",
+    "direction": "ltr",
+    "documentation": "Not yet translated"
+  },
+  {
+    "locale": "ha-NG",
+    "language": "Hausa",
+    "nativeName": "Hausa",
+    "direction": "ltr",
+    "documentation": "Not yet translated"
+  },
+  {
+    "locale": "zu-ZA",
+    "language": "Zulu",
+    "nativeName": "isiZulu",
+    "direction": "ltr",
+    "documentation": "Not yet translated"
+  },
+  {
+    "locale": "af-ZA",
+    "language": "Afrikaans",
+    "nativeName": "Afrikaans",
+    "direction": "ltr",
+    "documentation": "Not yet translated"
+  }
+]

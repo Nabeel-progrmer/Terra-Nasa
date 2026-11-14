@@ -1,0 +1,107 @@
+.account-page {
+  max-width: 760px;
+}
+
+.account-card {
+  margin: 18px 0;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: #0e191e;
+}
+
+.account-card h2 {
+  margin: 0 0 10px;
+  color: #e9f0f4;
+  font: 600 19px Manrope, sans-serif;
+}
+
+.account-card p {
+  color: #a7b8ba;
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.account-card form {
+  display: grid;
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.account-card label {
+  display: grid;
+  gap: 6px;
+  color: #dce8e7;
+  font-size: 13px;
+}
+
+.account-card input {
+  width: 100%;
+  min-height: 44px;
+  padding: 9px 11px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #101b21;
+  color: #e9f0f4;
+}
+
+.account-card label small,
+.account-privacy {
+  color: #91a5a6;
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+.account-mode-tabs,
+.account-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0;
+}
+
+.account-mode-tabs button,
+.account-resend {
+  min-height: 42px;
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: transparent;
+  color: #dce8e7;
+  cursor: pointer;
+}
+
+.account-mode-tabs button.selected {
+  border-color: rgba(195, 232, 137, .55);
+  background: rgba(195, 232, 137, .08);
+  color: #e5efd9;
+}
+
+.account-links a {
+  display: inline-flex;
+  min-height: 42px;
+  align-items: center;
+  color: var(--lime);
+  text-underline-offset: 3px;
+}
+
+.account-message,
+.account-error {
+  margin: 12px 0;
+  padding: 10px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.account-message {
+  border: 1px solid rgba(139, 214, 219, .28);
+  background: rgba(139, 214, 219, .06);
+  color: #cbe4e3;
+}
+
+.account-error {
+  border: 1px solid rgba(236, 140, 114, .3);
+  background: rgba(236, 140, 114, .06);
+  color: #f0c1b3;
+}

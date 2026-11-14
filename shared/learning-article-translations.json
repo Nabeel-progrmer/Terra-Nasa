@@ -1,0 +1,431 @@
+{
+  "ur-PK": {
+    "getting-started": {
+      "title": "ٹیرا کے ساتھ شروعات",
+      "category": "یہاں سے شروع کریں",
+      "summary": "ٹیرا کے حقیقی ڈیٹا پر مبنی سائنسی ٹولز کا ابتدائی تعارف۔",
+      "sections": [
+        {
+          "heading": "ٹیرا کیا کرتا ہے",
+          "text": "ٹیرا منتخب عوامی زمینی اور خلائی ڈیٹا فیڈز، رہنمائی کے ساتھ موسمیاتی تبدیلی کا تجزیہ، سائنسی وضاحتیں، اور تحقیقی نوٹس یکجا کرتا ہے۔ یہ شواہد کا جائزہ لینے میں مدد دیتا ہے؛ یہ زلزلے کی پیش گوئی نہیں کرتا، سرکاری ہنگامی انتباہات جاری نہیں کرتا، اور بنیادی ماخذ کا متبادل نہیں ہے۔"
+        },
+        {
+          "heading": "آپ کا پہلا تعارفی دورہ",
+          "items": [
+            "جائزہ کھولیں تاکہ USGS زلزلہ فیڈ کی موجودہ تعداد، Open-Meteo کے ایک موسمی مقام، ماخذ کے تازہ ہونے کی کیفیت، اور ڈیٹا گیٹ وے کی اصل تیاری کی حالت دیکھ سکیں۔",
+            "آب و ہوا کے رجحانات منتخب کریں تاکہ دو یا زیادہ پہلے سے مقرر کردہ نقاط پر NASA POWER کے ماہانہ MERRA-2 نتائج کا موازنہ کریں۔",
+            "زمین کا ایکسپلورر استعمال کرکے OpenStreetMap کا گلوب دیکھیں اور، اختیاری طور پر، NASA GIBS Aura OMI کی دستیاب تازہ ترین اوزون تصویری تاریخ دیکھیں۔",
+            "ماخذ اور ان کی حدود جانچنے کے لیے ڈیٹا کے ذرائع کھولیں، یا فضائی ماڈل، NOAA خلائی موسم کے ڈیٹا، اور فلکیاتی ٹولز کے لیے خلائی ایکسپلورر کھولیں۔"
+          ]
+        },
+        {
+          "heading": "شواہد کی پیروی کریں",
+          "text": "ہر نتیجے کے ساتھ اس کا ماخذ، اکائیاں، مؤثر وقت، حاصل کرنے کا وقت، اور یہ بات دیکھیں کہ وہ مشاہدہ، پیش گوئی، ماڈل، فہرستی رپورٹ، یا حساب ہے۔ غائب ڈیٹا کو غائب ہی دکھایا جاتا ہے؛ اسے خاموشی سے کسی فرضی قدر سے تبدیل نہیں کیا جاتا۔",
+          "linkLabel": "دستیاب ڈیٹا ذرائع دیکھیں"
+        }
+      ]
+    },
+    "about-terra": {
+      "title": "TERRA کا تعارف",
+      "category": "یہاں سے شروع کریں",
+      "summary": "مقصد، صارفین، سائنسی دائرہ اور پلیٹ فارم کی موجودہ حدود۔",
+      "sections": [
+        {
+          "heading": "مقصد",
+          "text": "TERRA زمین اور خلا کے بارے میں شواہد پر مبنی معلوماتی پلیٹ فارم ہے۔ یہ چند عوامی ڈیٹا فراہم کنندگان کو آسان چارٹس اور صاف زبان میں وضاحتوں کے ساتھ جوڑتا ہے۔"
+        },
+        {
+          "heading": "TERRA کون استعمال کر سکتا ہے؟",
+          "text": "یہ نظام سیکھنے کے شوقین افراد اور محققین کے لیے ہے۔ رجحان تجزیہ آسان خلاصہ اور تکنیکی طریقۂ کار دونوں دکھاتا ہے۔ نتائج ابتدائی تحقیق کے لیے ہیں، peer-reviewed تحقیق نہیں۔"
+        },
+        {
+          "heading": "TERRA کیا دعویٰ نہیں کرتا؟",
+          "items": [
+            "فی الحال صارف اکاؤنٹس یا نجی ورک اسپیس دستیاب نہیں؛ تحقیقی نوٹس اسی deployment کے صارفین کے ساتھ مشترک ہیں۔",
+            "Earth Explorer گلوب، چند مقامات، اختیاری اوزون تصاویر اور اجازت کے بعد مقامی موسم دکھاتا ہے؛ تمام خطرات یا سمندری تہیں نہیں۔",
+            "زلزلے کی feed رپورٹوں کا کیٹلاگ ہے، پیش گوئی یا ابتدائی انتباہ نہیں۔",
+            "AI وضاحت غلط ہو سکتی ہے؛ اسے حوالہ شدہ بنیادی ماخذ سے جانچیں۔"
+          ]
+        }
+      ]
+    },
+    "dashboard": {
+      "title": "Overview کا رہنما",
+      "category": "خصوصیات",
+      "summary": "Overview کارڈز، تازہ feed، ڈیٹا کی حالت اور نیویگیشن کو سمجھیں۔",
+      "sections": [
+        {
+          "heading": "Overview کارڈز",
+          "text": "ہوم صفحہ اصل API جواب دکھاتا ہے: USGS زلزلہ رپورٹوں کی تعداد، 20° شمال اور 0° مشرق پر Open-Meteo ماڈل موسم، اور TERRA health endpoint کی تیاری۔ دستیاب نہ ہونے والی قدر کو صفر نہیں دکھایا جاتا۔"
+        },
+        {
+          "heading": "حالیہ زلزلہ سرگرمی",
+          "text": "فہرست میں موصولہ USGS رپورٹ کا مقام، شدت، مختصات اور واقعے کا وقت ہوتا ہے۔ retrieval وقت بتاتا ہے کہ TERRA نے feed کب حاصل کی؛ یہ زلزلے کے وقت کا متبادل نہیں۔"
+        },
+        {
+          "heading": "نیویگیشن اور تازگی",
+          "text": "موجودہ navigation سے مختلف حصوں میں جائیں۔ فراہم کنندہ کے وقت اور label دونوں دیکھیں؛ تازہ retrieval میں بھی پرانی observation date والا ڈیٹا آ سکتا ہے۔"
+        }
+      ]
+    },
+    "account-settings": {
+      "title": "اکاؤنٹ اور ترتیبات",
+      "category": "خصوصیات",
+      "summary": "اکاؤنٹ کی سہولتیں، نجی ڈیٹا اور دستیاب ترجیحات۔",
+      "sections": [
+        {
+          "heading": "اکاؤنٹ",
+          "text": "اکاؤنٹ کے ذریعے اپنی تحقیق اور محفوظ پیش رفت تک رسائی ممکن ہے۔ نجی یا حساس معلومات صرف اس وقت درج کریں جب آپ اکاؤنٹ میں سائن اِن ہوں اور نجی ورک اسپیس واضح ہو۔"
+        },
+        {
+          "heading": "ڈسپلے کی ترجیحات",
+          "text": "اوپر Access کھول کر بڑا متن، زیادہ contrast اور کم motion فعال کریں۔ یہ ترجیحات اسی browser کے مقامی storage میں محفوظ ہوتی ہیں۔ browser zoom اور نظام کی accessibility ترتیبات بھی استعمال کی جا سکتی ہیں۔",
+          "linkLabel": "Accessibility کی رہنمائی پڑھیں"
+        },
+        {
+          "heading": "زبان",
+          "text": "Learning Center کی اصل دستاویزات انگریزی میں ہیں؛ اردو ترجمہ دستیاب ہونے پر وہ دکھایا جاتا ہے۔ زبان کا انتخاب ہر provider کے اصل نام، سائنسی اصطلاح یا AI جواب کے انسانی جائزے کی ضمانت نہیں۔"
+        }
+      ]
+    },
+    "earth-explorer": {
+      "title": "Earth Explorer",
+      "category": "خصوصیات",
+      "summary": "گلوب چلائیں، جگہ منتخب کریں، اور دستیاب اوزون و موسم کی تہیں دیکھیں۔",
+      "sections": [
+        {
+          "heading": "گلوب پر حرکت",
+          "items": [
+            "مرکزی navigation سے Earth Explorer کھولیں۔",
+            "Jump to a place فہرست سے موجود مقام منتخب کریں؛ Cesium گلوب کو drag اور zoom کیا جا سکتا ہے۔",
+            "نقشے کے بغیر متبادل کے لیے Climate trends میں متن اور ڈیٹا جدول دیکھیں۔"
+          ]
+        },
+        {
+          "heading": "تصاویر اور مقامی موسم",
+          "text": "اختیاری تصویری تہہ NASA GIBS Aura OMI کے مجموعی اوزون کی ہے۔ TERRA فراہم کنندہ کی تازہ ترین دستیاب تاریخ لیتا ہے؛ یہ آج سے پیچھے ہو سکتی ہے۔ رنگ نقشے کی تصویر ہیں، نقطے پر concentration کی پیمائش یا صحت کا مشورہ نہیں۔ Use my location منتخب کرکے browser اجازت دینے کے بعد Open-Meteo سے ان مختصات کا model weather منگوایا جا سکتا ہے۔"
+        },
+        {
+          "heading": "تہیں اور حدود",
+          "text": "یہ صفحہ فی الحال زلزلہ، سونامی، آگ، آتش فشاں، سیلاب، فضائی معیار یا سمندر کے selectable layers فراہم نہیں کرتا۔ نقشے کے کسی مقام کی نزدیکی سے مقامی نقصان اخذ نہ کریں۔ دستیاب USGS reports اور اختیاری زلزلہ/بارش signals کے لیے Events اور Alerts کھولیں۔",
+          "linkLabel": "زلزلے کی دستیاب رپورٹس کھولیں"
+        }
+      ]
+    },
+    "weather": {
+      "title": "Weather Explorer",
+      "category": "خصوصیات",
+      "summary": "موجودہ اور پیش گوئی شدہ موسم، ماخذ اور اس کے اوقات پڑھیں۔",
+      "sections": [
+        {
+          "heading": "مقام منتخب کریں",
+          "text": "فہرست میں مقام منتخب کریں یا device location کی اجازت دیں۔ production میں مقام کے لیے browser permission اور HTTPS ضروری ہیں؛ اس کے بغیر بھی جاری رہ سکتے ہیں۔ موسم Open-Meteo forecast/model output ہے، لازماً قریبی station کی پیمائش نہیں۔"
+        },
+        {
+          "heading": "نتیجہ سمجھیں",
+          "text": "اکائیاں، provider time، retrieval time اور forecast labels ساتھ دیکھیں۔ فی گھنٹہ چارٹ provider کی دی ہوئی timeline دکھاتا ہے؛ غائب قدریں غائب رہتی ہیں۔ محسوس ہونے والا درجۂ حرارت comfort کا تخمینہ ہے، الگ air-temperature measurement نہیں۔"
+        },
+        {
+          "heading": "ڈیٹا دستیاب نہ ہو",
+          "text": "Retry دبائیں، کنکشن چیک کریں یا دوسرا مقام منتخب کریں۔ TERRA کو غائب reading کے بجائے error دکھانا چاہیے، صفر نہیں۔"
+        }
+      ]
+    },
+    "events-alerts": {
+      "title": "واقعات اور خطرے کے انتباہات",
+      "category": "خصوصیات",
+      "summary": "USGS زلزلہ رپورٹ فلٹر کریں اور اختیاری زلزلہ یا تیز بارش notifications بنائیں۔",
+      "sections": [
+        {
+          "heading": "زلزلہ feed",
+          "text": "گزشتہ گھنٹہ، دن، 7 دن یا 30 دن منتخب کریں اور چاہیں تو کم از کم شدت مقرر کریں۔ فہرست USGS ComCat catalog پر مبنی ہے اور وقت، گہرائی، مختصات اور ماخذ کا link دیتی ہے۔ catalog records بعد میں تبدیل ہو سکتے ہیں۔"
+        },
+        {
+          "heading": "اختیاری انتباہات",
+          "text": "Alerts صفحہ منتخب radius میں USGS زلزلہ رپورٹ اور/یا Open-Meteo تیز بارش thresholds کی اطلاع اس device پر بھیج سکتا ہے۔ اس کے لیے اجازت، دستیاب server، database، VAPID keys، اور browser/device کا push support ضروری ہے۔"
+        },
+        {
+          "heading": "حفاظتی حد",
+          "text": "TERRA کے alerts سرکاری warnings، سیلاب کے اثرات کی پیش گوئی، زلزلہ پیش گوئی یا early-warning نہیں ہیں۔ ہنگامی صورت میں مقامی حکام کی ہدایات لیں۔ واقعے کی قربت مقامی نقصان ثابت نہیں کرتی۔"
+        }
+      ]
+    },
+    "space-explorer": {
+      "title": "فضا اور خلائی Explorer",
+      "category": "خصوصیات",
+      "summary": "حوالہ ماڈل، مشاہدات، forecasts اور فلکیاتی حساب میں فرق کریں۔",
+      "sections": [
+        {
+          "heading": "فضا",
+          "text": "یہ صفحہ U.S. Standard Atmosphere کا reference profile دکھاتا ہے؛ یہ model ہے، مقامی موسم نہیں۔ پانچ حرارتی تہیں troposphere، stratosphere، mesosphere، thermosphere اور exosphere ہیں؛ profile 84.852 geopotential km پر ختم ہوتا ہے۔ Ionosphere ایک overlap کرتی ionized region ہے اور magnetosphere زمین کا مقناطیسی ماحول؛ یہ اضافی حرارتی تہیں نہیں۔"
+        },
+        {
+          "heading": "خلائی موسم اور فلکیات",
+          "text": "NOAA SWPC میں مشاہدہ شدہ indices اور X-ray flux، منتقل شدہ solar-wind estimates، اور حالیہ پیغامات شامل ہیں؛ انہیں active warning نہ سمجھیں۔ NASA/JPL close-approach entries catalog predictions ہیں، ٹکراؤ کی پیش گوئی نہیں۔ Astronomy Engine کی positions اور طلوع/غروب کے اوقات مقامی اندازے ہیں، navigation کے لیے نہیں۔"
+        },
+        {
+          "heading": "سیاروی آرکائیو",
+          "text": "PDS browser archive metadata تلاش کرتا ہے، اور اجازت کے بعد صرف معاون محدود PDS4 tables پڑھ سکتا ہے۔ RIMFAX مثال provider کے شائع کردہ calibrated samples استعمال کرتی ہے؛ یہ آلے کی دوبارہ calibration یا مکمل radargram نہیں۔"
+        }
+      ]
+    },
+    "research": {
+      "title": "Research Hub اور میدانی نوٹس",
+      "category": "خصوصیات",
+      "summary": "تحقیقی سوال بنائیں اور مشترک گمنام ورک اسپیس کی حدود سمجھیں۔",
+      "sections": [
+        {
+          "heading": "تحقیقی نوٹ بنائیں",
+          "text": "تجویز کردہ سوال منتخب کریں یا اپنا سوال لکھیں، پھر دلچسپی کا علاقہ اور source category چنیں۔ server database دستیاب ہو تو نوٹس shared investigations service میں محفوظ ہوتے ہیں۔"
+        },
+        {
+          "heading": "رازداری اور اشتراک",
+          "text": "نوٹس گمنام ہیں اور اسی deployment کے دوسرے صارفین کو نظر آتے ہیں۔ نجی account storage، private project یا access control نہیں۔ خفیہ یا شناختی معلومات محفوظ نہ کریں۔"
+        },
+        {
+          "heading": "نوٹس کو شواہد سے جوڑیں",
+          "text": "NASA POWER کا محدود موازنہ کرنے کے لیے Trend workspace اور providers کی جانچ کے لیے source registry استعمال کریں۔ نوٹ ایک سوال ہے، خود سائنسی نتیجہ نہیں۔"
+        }
+      ]
+    },
+    "data-sources": {
+      "title": "Data Explorer اور ذرائع",
+      "category": "ڈیٹا اور طریقہ",
+      "summary": "موجود source registry تلاش کریں اور provenance و حدود دیکھیں۔",
+      "sections": [
+        {
+          "heading": "ماخذ تلاش کریں",
+          "text": "صرف حقیقتاً implemented adapters دیکھنے کے لیے registry filters استعمال کریں۔ کسی adapter کا درج ہونا provider کے ہر وقت دستیاب ہونے کی ضمانت نہیں۔"
+        },
+        {
+          "heading": "Metadata پڑھیں",
+          "items": [
+            "provider اور product کا نام، data type، units، زمانی/مکانی دائرہ اور source link دیکھیں۔",
+            "مشاہدے، catalog records، reanalysis/model، forecasts، calculations اور predictions میں فرق کریں۔",
+            "resolution، coverage، update timing اور supported formats سمجھنے کے لیے caveats پڑھیں۔"
+          ]
+        },
+        {
+          "heading": "دوبارہ پیدا کرنے کے قابل نتیجہ",
+          "text": "source، retrieval/valid time، مقام یا مدت، units، processing steps اور حدود نوٹ کریں۔ provider ڈیٹا بعد میں بدل سکتا ہے؛ اگلی بار نتیجہ مختلف ہو سکتا ہے۔"
+        }
+      ]
+    },
+    "ai-guide": {
+      "title": "TERRA AI رہنما",
+      "category": "خصوصیات",
+      "summary": "Learning Center کے مضامین پر مبنی وضاحت پوچھیں اور ماخذ چیک کریں۔",
+      "sections": [
+        {
+          "heading": "سوال کیسے پوچھیں",
+          "text": "متعلقہ page یا result اور مدد کی قسم بتائیں: آسان وضاحت، مختصر خلاصہ، تکنیکی تفصیل یا مرحلہ وار ہدایات۔ Learning Center assistant موجودہ تصدیق شدہ مضمون کو server-validated context کے طور پر شامل کرتا ہے۔"
+        },
+        {
+          "heading": "سوال کے ساتھ کیا ہوتا ہے",
+          "text": "Groq ترتیب ہو تو TERRA سوال اور منتخب context backend کے ذریعے منتخب Groq model کو بھیجتا ہے۔ API key server پر رہتی ہے۔ نجی معلومات درج نہ کریں۔ server درخواست کی جانچ، timeout اور rate limit لگاتا ہے۔"
+        },
+        {
+          "heading": "AI جواب کی تصدیق",
+          "text": "AI جواب خودکار ہے، آزادانہ reviewed یا یقینی درست نہیں۔ linked source documentation اور app labels دیکھیں۔ interface تصدیق کیے بغیر AI یہ دعویٰ نہیں کر سکتا کہ اس نے setting بدلی، analysis کیا یا warning جاری کی۔",
+          "linkLabel": "TERRA Guide کھولیں"
+        }
+      ]
+    },
+    "methods": {
+      "title": "سائنسی ڈیٹا اور طریقۂ کار",
+      "category": "ڈیٹا اور طریقہ",
+      "summary": "TERRA کے طریقے، مفروضے، غیر یقینی صورت اور reproducibility۔",
+      "sections": [
+        {
+          "heading": "NASA POWER رجحان تجزیہ",
+          "text": "NASA POWER ماہانہ MERRA-2 point values کو دنوں کے وزن سے سالانہ اوسط میں بدلتے ہیں۔ 10 سے کم درست مہینوں والے سال خارج ہوتے ہیں۔ TERRA coverage، Theil–Sen slope، مدت کی تبدیلی، تقریبی OLS slope interval، دو طرفہ Mann–Kendall p-value اور منتخب مقامات پر Benjamini–Hochberg q-value دکھاتا ہے۔"
+        },
+        {
+          "heading": "اہم مفروضے",
+          "text": "point قریب ترین grid cell ہے، علاقائی اوسط نہیں۔ interval OLS کا ہے، Sen slope کا نہیں۔ test زمانی autocorrelation یا مکانی انحصار درست نہیں کرتا۔ statistical significance عملی اہمیت، سبب یا یقین ثابت نہیں کرتی؛ غیر حتمی نتیجہ تبدیلی نہ ہونے کا ثبوت بھی نہیں۔"
+        },
+        {
+          "heading": "سائنسی provenance",
+          "text": "TERRA نتائج کے ساتھ source، units، retrieval time، coverage، processing اور caveats دکھانے کی کوشش کرتا ہے۔ مزید تفصیل کے لیے اصل method note دیکھیں۔",
+          "linkLabel": "سائنسی طریقے کھولیں"
+        }
+      ]
+    },
+    "accessibility": {
+      "title": "Accessibility رہنما",
+      "category": "آغاز اور ترتیبات",
+      "summary": "کی بورڈ، screen reader، zoom، motion اور نقشے کے متبادل طریقے۔",
+      "sections": [
+        {
+          "heading": "کی بورڈ اور معاون ٹیکنالوجی",
+          "text": "کنٹرولز کے درمیان جانے کے لیے Tab اور Shift+Tab، بٹن چلانے کے لیے Enter یا Space، اور موبائل navigation/panels بند کرنے کے لیے Escape استعمال کریں۔ app میں skip link، واضح focus، semantic headings اور labels ہیں؛ trend page میں گلوب کا متنی متبادل اور جدول بھی ہے۔"
+        },
+        {
+          "heading": "ڈسپلے ترجیحات",
+          "items": [
+            "Access کھول کر بڑا متن، high contrast یا کم motion فعال کریں؛ ترجیحات اسی browser میں محفوظ ہیں۔",
+            "browser zoom استعمال کریں اور دیکھیں کہ صفحہ دوبارہ درست ترتیب میں آتا ہے۔",
+            "OS یا browser میں motion کم کیا جا سکتا ہے۔ صرف رنگ پر انحصار نہ کریں؛ labels، units، symbols اور متن پڑھیں۔"
+          ]
+        },
+        {
+          "heading": "معلوم حد",
+          "text": "Cesium گلوب مکمل keyboard-operable جغرافیائی ڈیٹا ٹیبل نہیں۔ متنی تجزیہ اور source links والی event lists متبادل ہیں۔ accessibility پر کام جاری ہے؛ دستیاب feedback controls سے مسئلہ بتائیں۔"
+        }
+      ]
+    },
+    "language-localization": {
+      "title": "زبان اور مقامی ترتیب",
+      "category": "آغاز اور ترتیبات",
+      "summary": "ملک سے زبان کا اندازہ لگائے بغیر اپنی زبان منتخب کریں۔",
+      "sections": [
+        {
+          "heading": "زبان ذاتی انتخاب ہے",
+          "text": "Learning Center میں دستیاب زبانوں میں سے انتخاب کریں۔ locale codes BCP 47 کے مطابق ہیں۔ regional variant زبان کا فرق بتا سکتا ہے، مگر TERRA مقام سے زبان اخذ یا پورے ملک پر ایک زبان نافذ نہیں کرتا۔"
+        },
+        {
+          "heading": "ترجمے کی کوریج واضح ہے",
+          "text": "مضامین کی اصل زبان English ہے۔ Urdu میں رہنما کا کچھ مواد موجود ہے؛ دوسرے صفحات کی ترجمانی کی کوریج ہر جگہ یکساں نہیں۔ Groq سے منتخب زبان میں تیار جواب reviewed translation نہیں ہوتا۔"
+        },
+        {
+          "heading": "RTL",
+          "text": "Urdu اور Arabic متن دائیں سے بائیں آ سکتا ہے۔ scientific symbols، dataset names اور units ضرورت کے مطابق بائیں سے دائیں رہتے ہیں۔ مکمل RTL دعویٰ کرنے سے پہلے مخلوط سمت کے متن کا جائزہ لیں۔"
+        }
+      ]
+    },
+    "troubleshooting": {
+      "title": "مسائل حل کرنا",
+      "category": "حوالہ",
+      "summary": "ڈیٹا، install، notifications اور AI Guide کے عام مسائل حل کریں۔",
+      "sections": [
+        {
+          "heading": "Provider کا نتیجہ غائب ہے",
+          "text": "دکھایا گیا error، source status اور network چیک کریں۔ دوبارہ کوشش کریں یا دوسرا supported مقام/مدت منتخب کریں۔ بعض مصنوعات تاخیر یا عدم دستیابی کا شکار ہوتی ہیں؛ غائب نتیجہ صفر نہیں۔"
+        },
+        {
+          "heading": "Install کا اختیار نہیں آ رہا",
+          "text": "production میں HTTPS ضروری ہے۔ iOS/iPadOS پر Safari Share → Add to Home Screen؛ Android پر Chrome menu؛ Windows/macOS پر supported browser کا install اختیار استعمال کریں۔ embedded browsers اور کچھ Firefox versions PWA install نہیں کرتے۔ app shell cache ہو سکتا ہے مگر live data کے لیے internet درکار ہے۔",
+          "linkLabel": "Install کی مدد کھولیں"
+        },
+        {
+          "heading": "AI Guide جواب نہیں دیتا",
+          "text": "خودکار جواب کے لیے server پر GROQ_API_KEY اور فعال GROQ_MODEL ضروری ہیں۔ server configuration چیک کریں اور rate limit کے بعد انتظار کریں۔ Groq کے بغیر بھی Guide کے reviewed topic answers دستیاب رہتے ہیں۔"
+        },
+        {
+          "heading": "Push notifications نہیں آتے",
+          "text": "browser permission، device notifications، HTTPS، server، MongoDB، VAPID اور Web Push support چیک کریں۔ ترسیل کا وقت best-effort ہے؛ سرکاری alert service بھی فعال رکھیں۔"
+        }
+      ]
+    },
+    "faq": {
+      "title": "اکثر پوچھے جانے والے سوالات",
+      "category": "حوالہ",
+      "summary": "TERRA کے شواہد اور حدود کے بارے میں مختصر جواب۔",
+      "sections": [
+        {
+          "heading": "کیا TERRA زلزلے کی پیش گوئی کرتا ہے؟",
+          "text": "نہیں۔ feed میں USGS کے درج شدہ زلزلے ہیں؛ alerts پیش گوئی یا early warning نہیں۔"
+        },
+        {
+          "heading": "کیا موسم براہ راست مقامی مشاہدہ ہے؟",
+          "text": "نہیں۔ موسم Open-Meteo forecast/model output ہے؛ provider اور valid time ساتھ دیکھیں۔"
+        },
+        {
+          "heading": "کیا میں account بنا سکتا ہوں؟",
+          "text": "ہاں، account registration موجود ہے۔ تحقیقی نوٹس صرف نجی تب ہوں گے جب آپ signed in ہوں اور private account سہولت استعمال کریں۔"
+        },
+        {
+          "heading": "کیا AI کو سائنسی ماخذ سمجھا جا سکتا ہے؟",
+          "text": "اسے وضاحت کا معاون سمجھیں، بنیادی ماخذ نہیں۔ حقائق، پیمائش اور تشریح cited provider اور method notes سے جانچیں۔"
+        }
+      ]
+    },
+    "glossary": {
+      "title": "سائنسی اصطلاحات",
+      "category": "ڈیٹا اور طریقہ",
+      "summary": "TERRA کے charts اور وضاحتوں میں استعمال ہونے والی اصطلاحات۔",
+      "sections": [
+        {
+          "heading": "Reanalysis",
+          "text": "ماضی کا تخمینہ جو عددی model اور دستیاب مشاہدات کو یکجا کرکے بنتا ہے۔ یہ ہر grid location پر براہ راست پیمائش نہیں۔"
+        },
+        {
+          "heading": "Grid point",
+          "text": "gridded dataset کا ایک coordinate۔ NASA POWER کا منتخب point قریب ترین model grid cell لیتا ہے، پورے خطے کی اوسط نہیں۔"
+        },
+        {
+          "heading": "Coverage",
+          "text": "app کے قواعد کے مطابق مدت میں دستیاب متوقع records کا حصہ۔ کم یا نامکمل coverage تشریح پر اثر ڈال سکتی ہے۔"
+        },
+        {
+          "heading": "Sen slope",
+          "text": "قدروں کے جوڑوں کے slopes کا درمیانی عدد؛ یہاں سالانہ monotonic تبدیلی کا مضبوط تخمینہ۔"
+        },
+        {
+          "heading": "p-value اور q-value",
+          "text": "p-value بتاتا ہے کہ null model اور مفروضوں کے تحت اتنا یا اس سے زیادہ extreme ڈیٹا کتنا غیر معمولی ہوگا؛ یہ null کے درست ہونے کا امکان نہیں۔ TERRA کا q-value ایک analysis کے منتخب مقامات پر Benjamini–Hochberg correction ہے۔"
+        },
+        {
+          "heading": "Forecast اور observation",
+          "text": "forecast مستقبل یا موجودہ حالات کا model output ہے۔ observation پیمائش ہے، catalog report ریکارڈ۔ TERRA انہیں الگ دکھاتا ہے کیونکہ یہ ایک دوسرے کے متبادل نہیں۔"
+        }
+      ]
+    },
+    "release-notes": {
+      "title": "ریلیز نوٹس",
+      "category": "حوالہ",
+      "summary": "دستاویزی صلاحیتوں اور معلوم حدود کا مختصر ریکارڈ۔",
+      "sections": [
+        {
+          "heading": "موجودہ دستاویزی صلاحیتیں",
+          "text": "Learning Center میں Overview، Earth Explorer، Weather، Events، Climate trends، Space Explorer، Guide، Alerts، Research notes اور Data sources کے صفحات شامل ہیں، جن کا جائزہ 2026-11-14 کو لیا گیا۔"
+        },
+        {
+          "heading": "معلوم حدود",
+          "items": [
+            "Learning Center کی اصل تحریر English ہے؛ ترجمے کی کوریج کام کے مرحلے میں ہے۔",
+            "حسابی تصدیق اور private investigations دستیاب نہیں۔",
+            "Earth Explorer ہر ممکن hazard layer فراہم نہیں کرتا۔",
+            "Trend analysis چار NASA POWER variables اور چھ preset مقامات تک محدود ہے۔"
+          ]
+        }
+      ]
+    },
+    "trend-analysis": {
+      "title": "Earth Trend Detector",
+      "category": "خصوصیات",
+      "summary": "NASA POWER کے متعدد مقامات پر رجحان جانچنے کا قابلِ تکرار طریقہ۔",
+      "sections": [
+        {
+          "heading": "متغیر منتخب کریں",
+          "text": "NASA POWER ماہانہ MERRA-2 متغیرات میں سے چنیں: سطح کے قریب درجۂ حرارت (T2M)، درست شدہ بارش (PRECTOTCORR)، نسبتی نمی (RH2M)، یا ہوا کی رفتار (WS10M)۔ تفصیل میں اکائی اور aggregation درج ہوتی ہے۔"
+        },
+        {
+          "heading": "مقامات اور سال منتخب کریں",
+          "items": [
+            "دو سے چھ preset coordinates منتخب کریں۔ ہر ایک قریب ترین NASA POWER grid point ہے، ملک یا علاقائی اوسط نہیں۔",
+            "مدت 1981 سے شروع اور گزشتہ calendar year پر ختم کریں۔ آخری 10 سال، 20 سال یا تمام دستیاب سال چنیں۔",
+            "ہر سال میں کم از کم 10 درست ماہانہ قدریں ضروری ہیں؛ غائب مہینے پُر نہیں کیے جاتے۔"
+          ]
+        },
+        {
+          "heading": "نتائج پڑھیں",
+          "text": "Sen slope سالانہ تبدیلی کا مضبوط تخمینہ ہے؛ مثبت قدر اضافہ اور منفی کمی بتاتی ہے۔ مجموعی تبدیلی اسی شرح کو مدت پر لاگو کرتی ہے۔ Coverage دستیاب ماہانہ قدریں بتاتی ہے۔ صرف significance نہیں، مقامات کے رجحان اور مقدار کا موازنہ کریں۔"
+        },
+        {
+          "heading": "Significance اور غیر یقینی کیفیت",
+          "text": "دو طرفہ Mann–Kendall p-value monotonic trend کے شواہد جانچتا ہے۔ Benjamini–Hochberg q اسی تجزیے کے منتخب مقامات میں correction کرتا ہے؛ app میں q < 0.05 شماریاتی flag ہے۔ دکھایا گیا تقریباً 95% interval الگ OLS slope کا ہے، Sen slope کا نہیں۔ serial correlation، spatial dependence، model uncertainty، عملی اہمیت اور سبب یہاں حل نہیں ہوتے۔"
+        },
+        {
+          "heading": "Export اور دوبارہ تجزیہ",
+          "items": [
+            "کامیاب تجزیے کے بعد CSV ڈاؤن لوڈ کریں۔",
+            "variable، coordinates، مطلوبہ سال، source product، retrieval time، coverage، method اور caveats محفوظ کریں۔",
+            "وہی انتخاب دہرا کر وہی بنیادی source series منگوائی جا سکتی ہے؛ provider کی revision تاریخی قدریں بدل سکتی ہے۔"
+          ],
+          "linkLabel": "طریقۂ کار کی مکمل تفصیل پڑھیں"
+        }
+      ]
+    }
+  }
+}

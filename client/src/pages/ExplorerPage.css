@@ -1,0 +1,134 @@
+.explorer-page .map-place-search {
+  display: flex;
+  flex: 1 1 320px;
+  gap: 6px;
+  max-width: 470px;
+}
+
+.explorer-page .map-place-search input {
+  width: 100%;
+  min-width: 100px;
+  min-height: 44px;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #101b21;
+  color: #e9f0f4;
+  font-size: 13px;
+}
+
+.explorer-page .map-search-note,
+.explorer-page .map-search-status {
+  margin: 4px 0 8px;
+  color: #91a5a6;
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+.explorer-page .map-place-results {
+  display: grid;
+  gap: 6px;
+  max-width: 600px;
+  margin: 0 0 12px;
+  padding: 0;
+  list-style: none;
+}
+
+.explorer-page .map-place-results button {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 12px;
+  width: 100%;
+  min-height: 44px;
+  align-items: center;
+  padding: 8px 11px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #101b21;
+  color: #e9f0f4;
+  text-align: left;
+  cursor: pointer;
+}
+
+.explorer-page .map-place-results button span {
+  color: #9aabad;
+  font-size: 12px;
+}
+
+.explorer-page .map-earthquake-layer {
+  margin: 0 0 12px;
+  padding: 13px 15px;
+  border: 1px solid rgba(240, 163, 111, .24);
+  border-radius: 8px;
+  background: rgba(240, 163, 111, .035);
+  color: #a7b8ba;
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.explorer-page .map-earthquake-layer h2 {
+  margin: 0 0 5px;
+  color: #e9f0f4;
+  font: 600 16px Manrope, sans-serif;
+}
+
+.explorer-page .map-earthquake-layer p {
+  margin: 5px 0;
+}
+
+.explorer-page .map-earthquake-layer ul {
+  display: grid;
+  gap: 5px;
+  margin: 8px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.explorer-page .map-earthquake-layer li,
+.explorer-page .map-earthquake-layer li a {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 12px;
+}
+
+.explorer-page .map-earthquake-layer li {
+  justify-content: space-between;
+  padding: 6px 0;
+  border-top: 1px solid rgba(190, 216, 224, .1);
+}
+
+.explorer-page .map-earthquake-layer li a,
+.explorer-page .map-earthquake-layer > a {
+  color: #dce8e7;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.explorer-page .map-earthquake-layer li a strong {
+  color: #f0b185;
+}
+
+.explorer-page .map-earthquake-layer li time {
+  color: #91a5a6;
+  font-size: 11px;
+}
+
+.explorer-page .map-earthquake-layer [role="alert"] {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  color: #f0c1b3;
+}
+
+@media (max-width: 620px) {
+  .explorer-page .map-place-search {
+    flex-basis: 100%;
+    max-width: none;
+  }
+
+  .explorer-page .map-place-search button {
+    flex: 0 0 auto;
+  }
+}

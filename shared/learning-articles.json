@@ -1,0 +1,316 @@
+{
+  "version": "1.0",
+  "updatedAt": "2026-11-14",
+  "articles": [
+    {
+      "id": "getting-started",
+      "title": "Getting started with TERRA",
+      "category": "Start here",
+      "summary": "A first-use tour of TERRA's real-data science tools.",
+      "level": "Beginner",
+      "minutes": 4,
+      "path": "/",
+      "tags": ["first visit", "overview", "navigation", "start"],
+      "related": ["dashboard", "trend-analysis", "accessibility"],
+      "sections": [
+        { "heading": "What TERRA does", "text": "TERRA brings together selected public Earth and space data feeds, a guided climate-change analysis, scientific explanations, and research notes. It helps you inspect evidence; it does not predict earthquakes, issue official emergency warnings, or replace primary sources." },
+        { "heading": "Your first walkthrough", "items": ["Open Overview to see current USGS earthquake-feed counts, one Open-Meteo weather point, source freshness, and the data gateway's actual readiness state.", "Choose Climate trends to compare NASA POWER monthly MERRA-2 values at two or more preset coordinates.", "Use Earth explorer to view an OpenStreetMap globe and, optionally, the latest NASA GIBS Aura OMI ozone imagery date available.", "Open Data sources to inspect provenance and limitations, or Space explorer for modeled atmosphere, NOAA space-weather data, and astronomy tools."] },
+        { "heading": "Follow the evidence", "text": "Look for each result's source, units, valid time, retrieval time, and whether it is an observation, forecast, model, catalog report, or calculation. Missing data stays missing; it is not silently replaced with a made-up value.", "link": { "label": "Browse available data sources", "to": "/sources" } }
+      ]
+    },
+    {
+      "id": "about-terra",
+      "title": "Introduction to TERRA",
+      "category": "Start here",
+      "summary": "Purpose, audience, scientific scope, and current platform boundaries.",
+      "level": "Beginner",
+      "minutes": 3,
+      "path": "/",
+      "tags": ["about", "purpose", "science", "platform"],
+      "related": ["getting-started", "methods", "data-sources"],
+      "sections": [
+        { "heading": "Purpose", "text": "TERRA is an evidence-first Earth and space intelligence platform. It connects a limited set of public data providers with approachable visualizations and plain-language explanations." },
+        { "heading": "Who can use TERRA", "text": "The interface is intended for curious learners and researchers. Trend analysis exposes both plain-language summaries and technical method notes. Results are exploratory and are not peer-reviewed research." },
+        { "heading": "What TERRA does not claim", "items": ["No user accounts or private workspaces are implemented; saved research notes are shared on the deployment.", "The Earth Explorer currently provides a globe, place presets, optional ozone imagery, and opt-in local weather—not every hazard or ocean layer.", "The integrated earthquake feed is a report catalog, not earthquake prediction or early warning.", "AI explanations can be wrong and should be checked against cited primary sources."] }
+      ]
+    },
+    {
+      "id": "dashboard",
+      "title": "Dashboard guide",
+      "category": "Using TERRA",
+      "summary": "Understand the Overview cards, live feed, data status, and navigation.",
+      "level": "Beginner",
+      "minutes": 3,
+      "path": "/",
+      "tags": ["dashboard", "home", "events", "weather", "freshness"],
+      "related": ["getting-started", "events-alerts", "data-sources"],
+      "sections": [
+        { "heading": "Overview cards", "text": "The home screen reads real API responses: current earthquake-feed count from USGS, weather-model fields for a fixed point at 20°N, 0°E from Open-Meteo, and readiness from TERRA's health endpoint. An unavailable value is not replaced with zero." },
+        { "heading": "Recent seismic activity", "text": "The event list shows returned USGS reports with place, magnitude, coordinates, and event time. The retrieval timestamp describes when TERRA fetched the feed; it is not the event time." },
+        { "heading": "Navigation and freshness", "text": "Use the persistent navigation to move between existing modules. Provider timestamps and labels should be read together: a recent retrieval can still return a product whose observation date is older." }
+      ]
+    },
+    {
+      "id": "account-settings",
+      "title": "Account and settings",
+      "category": "Using TERRA",
+      "summary": "What can be personalized today and what is not implemented.",
+      "level": "Beginner",
+      "minutes": 2,
+      "path": "/",
+      "tags": ["account", "settings", "preferences", "privacy"],
+      "related": ["accessibility", "language-localization", "research"],
+      "sections": [
+        { "heading": "Accounts", "text": "TERRA does not currently implement account registration, sign-in, or sign-out. Investigations are shared and anonymous; do not put private or sensitive information in them." },
+        { "heading": "Display preferences", "text": "Use Access in the top bar to turn larger text, high contrast, and reduced motion on or off. These settings are saved in local browser storage on this device. Your browser's zoom and operating-system accessibility settings remain available too.", "link": { "label": "Read accessibility guidance", "to": "/learn/accessibility" } },
+        { "heading": "Language", "text": "The Learning Center identifies English as its canonical documentation source. Other locale options show their actual documentation coverage; choosing a language does not imply the article is translated. AI responses in non-English languages are generated and have not been independently reviewed." }
+      ]
+    },
+    {
+      "id": "earth-explorer",
+      "title": "Earth Explorer",
+      "category": "Using TERRA",
+      "summary": "Navigate the globe, choose a preset, and inspect the supported ozone and weather layers.",
+      "level": "Beginner",
+      "minutes": 4,
+      "path": "/explorer",
+      "tags": ["map", "globe", "location", "ozone", "NASA GIBS", "weather"],
+      "related": ["weather", "trend-analysis", "data-sources"],
+      "sections": [
+        { "heading": "Navigate the globe", "items": ["Open Earth explorer from the main navigation.", "Use the Jump to a place selector to fly to an available preset; dragging and zooming the Cesium globe are pointer interactions.", "For a non-map alternative, open Climate trends and use its text results and data table."] },
+        { "heading": "Supported imagery and local weather", "text": "The optional imagery overlay is NASA GIBS Aura OMI total-column ozone. TERRA discovers the latest date advertised by the provider; it may lag the current day. Image colors are spatial imagery, not point-level concentration measurements or health advice. After you explicitly choose Use my location and grant browser permission, the page can request Open-Meteo model weather for those coordinates." },
+        { "heading": "Layers and limitations", "text": "This page currently does not implement selectable earthquake, tsunami, wildfire, volcano, flood, air-quality, or ocean data layers. Do not infer local impacts from proximity to a map feature. Use the actual Events and Alerts pages for supported USGS catalog reports and opt-in earthquake/rain signals.", "link": { "label": "Open supported earthquake reports", "to": "/events" } }
+      ]
+    },
+    {
+      "id": "trend-analysis",
+      "title": "Earth Trend Detector",
+      "category": "Using TERRA",
+      "summary": "A reproducible walkthrough of the NASA POWER multi-location trend workflow.",
+      "level": "Beginner to researcher",
+      "minutes": 7,
+      "path": "/trend",
+      "tags": ["trend", "NASA POWER", "temperature", "rainfall", "statistics", "confidence"],
+      "related": ["methods", "data-sources", "research"],
+      "sections": [
+        { "heading": "Choose a variable", "text": "Select one of the catalogued NASA POWER monthly MERRA-2 variables: near-surface temperature (T2M), corrected precipitation (PRECTOTCORR), relative humidity (RH2M), or wind speed (WS10M). The variable description includes its unit and aggregation." },
+        { "heading": "Choose places and years", "items": ["Select two to six preset coordinates. Each represents the nearest NASA POWER grid point, not a country or area-weighted regional average.", "Choose a period starting in 1981 and ending no later than the previous calendar year. Presets cover the last 10 years, last 20 years, or all available years.", "Each year needs at least 10 valid monthly values; missing months are not imputed."] },
+        { "heading": "Read the results", "text": "The Sen slope is the robust estimated change per year; positive is increasing and negative is decreasing. Total change scales that rate over the valid period. Coverage reports how many monthly values were available. Compare directions and magnitudes across locations, not just a significance label." },
+        { "heading": "Significance and uncertainty", "text": "The two-sided Mann–Kendall p-value tests monotonic-trend evidence; Benjamini–Hochberg q adjusts across locations selected in this run, with q < 0.05 used as the app's statistical flag. The displayed approximate 95% interval is for a separate OLS slope, not the Sen slope. Serial correlation, spatial dependence, model uncertainty, practical importance, and causation are not resolved." },
+        { "heading": "Export and reproduce", "items": ["Download data as CSV after a successful analysis.", "Record variable, coordinates, requested years, source product, retrieval time, coverage, method, and caveats from the result.", "Repeat with the same selections to request the same underlying source series; provider revisions can change historical values."] , "link": { "label": "Read the complete method notes", "to": "/learn/methods" } }
+      ]
+    },
+    {
+      "id": "weather",
+      "title": "Weather Explorer",
+      "category": "Using TERRA",
+      "summary": "Read current and forecast-model weather information and its provenance.",
+      "level": "Beginner",
+      "minutes": 3,
+      "path": "/weather",
+      "tags": ["weather", "forecast", "Open-Meteo", "location", "hourly"],
+      "related": ["earth-explorer", "events-alerts", "data-sources"],
+      "sections": [
+        { "heading": "Select a location", "text": "Use a listed place or explicitly opt in to device location. Location access requires browser permission and HTTPS in production; you can also continue without it. Weather values come from Open-Meteo forecast/model output, not necessarily a nearby weather station." },
+        { "heading": "Interpret the display", "text": "Read units, provider time, retrieval time, and forecast labels. Hourly charts represent the provider's returned timeline; missing values remain missing. Apparent temperature is a provider estimate of perceived comfort, not a separate air-temperature measurement." },
+        { "heading": "If data is unavailable", "text": "Use Retry, check connectivity, or select another location. TERRA should show an error rather than present an unavailable reading as zero." }
+      ]
+    },
+    {
+      "id": "events-alerts",
+      "title": "Events and hazard alerts",
+      "category": "Using TERRA",
+      "summary": "Filter USGS earthquake reports and configure opt-in earthquake or heavy-rain notifications.",
+      "level": "Beginner",
+      "minutes": 4,
+      "path": "/events",
+      "tags": ["events", "earthquake", "alerts", "push", "safety", "USGS"],
+      "related": ["earth-explorer", "weather", "troubleshooting"],
+      "sections": [
+        { "heading": "Earthquake event feed", "text": "Choose past hour, day, 7 days, or 30 days and optionally set a minimum magnitude. The list is based on USGS ComCat catalog reports and includes event time, depth, coordinates, and source detail link. Catalog records can be revised." },
+        { "heading": "Opt-in alerts", "text": "The Alerts page can subscribe this device to USGS earthquake catalog reports within a chosen radius and/or Open-Meteo heavy-rain forecast thresholds. Notifications require permission, a reachable configured server, database, VAPID keys, and browser/device push support." },
+        { "heading": "Safety boundary", "text": "TERRA alerts are not official warnings, flood-impact predictions, earthquake predictions, or early-warning signals. For emergencies, follow the local authorities and official public-safety services. An event near coordinates does not prove local damage or impact." }
+      ]
+    },
+    {
+      "id": "space-explorer",
+      "title": "Atmosphere and Space Explorer",
+      "category": "Using TERRA",
+      "summary": "Distinguish reference models, provider observations, forecasts, and calculated astronomy.",
+      "level": "Beginner to researcher",
+      "minutes": 5,
+      "path": "/space",
+      "tags": ["atmosphere", "space weather", "solar", "planets", "asteroids", "NASA", "NOAA"],
+      "related": ["data-sources", "methods", "glossary"],
+      "sections": [
+        { "heading": "Atmosphere", "text": "The page shows a U.S. Standard Atmosphere reference profile; it is a model, not local weather. The five thermal layers are troposphere, stratosphere, mesosphere, thermosphere, and exosphere; the model profile currently ends at 84.852 geopotential km. The ionosphere is an overlapping ionized region, and the magnetosphere is Earth's magnetic environment—not extra thermal layers." },
+        { "heading": "Space weather and astronomy", "text": "NOAA SWPC products include observed indices and X-ray flux, propagated solar-wind estimates, and recent messages whose active-warning status is not asserted. NASA/JPL close-approach entries are catalog predictions, not impact predictions. Astronomy Engine positions and rise/set times are local calculations, approximate and not navigation-grade." },
+        { "heading": "Planetary archive", "text": "The PDS browser searches archive metadata and can decode only supported bounded PDS4 delimited tables after you opt in. The RIMFAX example uses provider-published calibrated sounding samples; decoding is not instrument recalibration or a complete radargram." }
+      ]
+    },
+    {
+      "id": "research",
+      "title": "Research Hub and field notes",
+      "category": "Research",
+      "summary": "Create shared research questions and inspect the limits of the anonymous workspace.",
+      "level": "Beginner",
+      "minutes": 3,
+      "path": "/investigations",
+      "tags": ["research", "field notes", "investigations", "export"],
+      "related": ["trend-analysis", "data-sources", "account-settings"],
+      "sections": [
+        { "heading": "Create a research note", "text": "Choose a question starter or enter a question, then select an area of interest and a source category. Notes are saved in the shared investigations service when the server database is available." },
+        { "heading": "Privacy and collaboration", "text": "Notes are anonymous and shared with users of the same deployment. There is no account-based privacy, private project workspace, or access control. Do not save confidential or identifying information." },
+        { "heading": "Connect notes to evidence", "text": "Use the trend workspace to make a bounded NASA POWER comparison and the source registry to check supported providers. A note is a question, not itself a scientific result." }
+      ]
+    },
+    {
+      "id": "data-sources",
+      "title": "Data Explorer and sources",
+      "category": "Research",
+      "summary": "Search the implemented source registry and inspect provenance and caveats.",
+      "level": "Beginner to researcher",
+      "minutes": 4,
+      "path": "/sources",
+      "tags": ["data", "dataset", "source", "provenance", "coverage", "units"],
+      "related": ["methods", "trend-analysis", "space-explorer"],
+      "sections": [
+        { "heading": "Find a source", "text": "Use the source registry filters to browse adapters that are actually implemented. A listed adapter is not a guarantee of current provider uptime." },
+        { "heading": "Read metadata", "items": ["Check the provider and product name, data type, units, temporal or spatial support, and source link.", "Distinguish observations, catalog records, reanalysis/model output, forecasts, calculations, and predictions.", "Use the stated caveats to understand resolution, coverage, update timing, and supported formats."] },
+        { "heading": "Reproducibility", "text": "For a result, retain source, retrieval/valid time, selected location or period, units, processing steps, and limitations. Provider datasets can be revised; a later request may differ." }
+      ]
+    },
+    {
+      "id": "ai-guide",
+      "title": "TERRA AI Guide",
+      "category": "Research",
+      "summary": "Ask for explanations grounded in Learning Center articles and check the sources.",
+      "level": "Beginner",
+      "minutes": 3,
+      "path": "/guide",
+      "tags": ["AI", "Groq", "assistant", "explain", "summarize", "translate"],
+      "related": ["methods", "data-sources", "troubleshooting"],
+      "sections": [
+        { "heading": "How to ask", "text": "State the page or result you mean and what kind of help you need: a simpler explanation, a short summary, technical detail, or step-by-step directions. The Learning Center assistant includes the current verified article as server-validated context." },
+        { "heading": "What happens to the request", "text": "When Groq is configured, TERRA sends the question and selected context through its backend to the configured Groq model. The API key remains on the server. Do not enter private information. The server applies request validation, a timeout, and rate limiting." },
+        { "heading": "Verify AI output", "text": "AI responses are generated, not independently reviewed or guaranteed correct. Check linked source documentation and actual app labels. The AI cannot claim it changed settings, performed an analysis, or issued a warning unless the interface confirms that action.", "link": { "label": "Open the TERRA Guide", "to": "/guide" } }
+      ]
+    },
+    {
+      "id": "methods",
+      "title": "Scientific data and methodology",
+      "category": "Research",
+      "summary": "Methods, assumptions, uncertainty, and reproducibility conventions used in TERRA.",
+      "level": "Researcher",
+      "minutes": 5,
+      "path": "/sources",
+      "tags": ["method", "statistics", "uncertainty", "significance", "reproducibility"],
+      "related": ["trend-analysis", "data-sources", "glossary"],
+      "sections": [
+        { "heading": "NASA POWER trend workflow", "text": "Monthly NASA POWER MERRA-2 point values are converted to day-weighted annual means. Years with fewer than 10 valid months are omitted. TERRA reports coverage, Theil–Sen slope, period change, approximate OLS slope interval, two-sided Mann–Kendall p-value, and Benjamini–Hochberg q-value across selected locations." },
+        { "heading": "Important assumptions", "text": "The point is the nearest grid cell, not a regional average. The interval is for OLS, not Sen slope. The test does not correct temporal autocorrelation or spatial dependence. A significant test does not show practical importance, causal mechanism, or certainty; an inconclusive test does not prove no change." },
+        { "heading": "Scientific provenance", "text": "TERRA aims to preserve source, units, retrieval time, coverage, processing, and limitations beside results. Consult the canonical method note for details.", "link": { "label": "Open scientific methods", "to": "/sources" } }
+      ]
+    },
+    {
+      "id": "accessibility",
+      "title": "Accessibility guide",
+      "category": "Learn and customize",
+      "summary": "Keyboard, screen-reader, zoom, motion, and non-map ways to use TERRA.",
+      "level": "Beginner",
+      "minutes": 3,
+      "path": "/",
+      "tags": ["accessibility", "keyboard", "screen reader", "zoom", "motion", "disability"],
+      "related": ["account-settings", "earth-explorer", "language-localization"],
+      "sections": [
+        { "heading": "Keyboard and assistive technology", "text": "Use Tab and Shift+Tab to move through controls, Enter or Space to activate buttons, and Escape to close the mobile navigation or panels. The app provides a skip link, visible focus, semantic headings and labels, and text alternatives to the globe in the trend page's text results and table." },
+        { "heading": "Display preferences", "items": ["Open Access to enable larger text, high contrast, or reduced motion; preferences are saved in this browser.", "Browser zoom remains available. Check that the page reflows at your zoom level.", "The operating system or browser may also reduce motion. Avoid relying on color alone; read labels, units, symbols, and text summaries."] },
+        { "heading": "Known limitation", "text": "The interactive Cesium globe is not a complete keyboard-operable geographic data table. Use the text-based analysis and source-linked event lists as alternatives. Accessibility is ongoing; report problems using the feedback controls where available." }
+      ]
+    },
+    {
+      "id": "language-localization",
+      "title": "Language and localization",
+      "category": "Learn and customize",
+      "summary": "Select a locale without guessing a user's language from their country.",
+      "level": "Beginner",
+      "minutes": 2,
+      "path": "/learn",
+      "tags": ["language", "locale", "translation", "Urdu", "Arabic", "RTL", "BCP 47"],
+      "related": ["getting-started", "accessibility", "ai-guide"],
+      "sections": [
+        { "heading": "Language is a personal choice", "text": "Choose from the Learning Center's explicit locale options. Locale codes follow BCP 47. A locale can express a regional variant, but TERRA does not infer a person's language from their location or force one language for an entire country." },
+        { "heading": "Coverage is shown honestly", "text": "English is the canonical article source. Urdu has limited reviewed material in the existing Guide, but the Learning Center article translations are not complete. Other listed languages have no reviewed Learning Center translations yet. Groq may generate responses in a selected language when configured; generated language is not a reviewed translation." },
+        { "heading": "RTL", "text": "Urdu and Arabic article text can use right-to-left direction. Scientific symbols, dataset names, and units remain left-to-right where appropriate. Mixed-direction content should be reviewed before claiming full RTL localization." }
+      ]
+    },
+    {
+      "id": "troubleshooting",
+      "title": "Troubleshooting",
+      "category": "Get help",
+      "summary": "Resolve common data, installation, notification, and AI Guide issues.",
+      "level": "Beginner",
+      "minutes": 4,
+      "path": "/sources",
+      "tags": ["troubleshoot", "error", "install", "offline", "notifications", "Groq"],
+      "related": ["ai-guide", "events-alerts", "data-sources"],
+      "sections": [
+        { "heading": "A provider result is missing", "text": "Check the displayed error, source status, and network connection. Retry or choose another supported location/time range. Some products lag or are unavailable; do not interpret a missing result as zero." },
+        { "heading": "Install is not offered", "text": "Production must be served over HTTPS. On iOS/iPadOS use Safari Share → Add to Home Screen; on Android use Chrome's menu; on Windows/macOS use a supported browser's install option. Embedded browsers and some Firefox versions may not support PWA installation. The app shell can be cached, but live data needs internet.", "link": { "label": "Open the install help", "to": "/" } },
+        { "heading": "AI Guide cannot answer", "text": "Generated answers require GROQ_API_KEY on the server and an active GROQ_MODEL. Check server configuration status and wait before retrying rate-limited requests. Reviewed topic answers in the existing Guide remain available when Groq is not configured." },
+        { "heading": "Push notifications do not arrive", "text": "Check browser permission, device notification settings, HTTPS, server reachability, MongoDB, VAPID configuration, and whether the browser supports Web Push. Delivery timing is best effort; keep official alert services enabled." }
+      ]
+    },
+    {
+      "id": "faq",
+      "title": "Frequently asked questions",
+      "category": "Get help",
+      "summary": "Short answers to common questions about TERRA's evidence and limits.",
+      "level": "Beginner",
+      "minutes": 3,
+      "path": "/",
+      "tags": ["FAQ", "account", "warning", "forecast", "data", "AI"],
+      "related": ["about-terra", "events-alerts", "account-settings"],
+      "sections": [
+        { "heading": "Does TERRA predict earthquakes?", "text": "No. The event feed reports cataloged USGS earthquakes; alerts are not predictions or early warnings." },
+        { "heading": "Are weather values direct local observations?", "text": "No. TERRA's integrated weather values are Open-Meteo forecast/model output and should be labeled with the provider and valid time." },
+        { "heading": "Can I make an account?", "text": "No. Account registration is not implemented. Research notes are shared anonymously on the deployment." },
+        { "heading": "Can the AI be trusted as a scientific source?", "text": "Treat it as an explanation aid, not a primary source. Verify facts, measurements, and interpretation against the cited provider and method notes." }
+      ]
+    },
+    {
+      "id": "glossary",
+      "title": "Scientific glossary",
+      "category": "Get help",
+      "summary": "Definitions for terms used in TERRA's charts and explanations.",
+      "level": "Beginner",
+      "minutes": 4,
+      "path": "/trend",
+      "tags": ["glossary", "reanalysis", "grid", "coverage", "p value", "q value", "Sen slope", "forecast"],
+      "related": ["trend-analysis", "methods", "data-sources"],
+      "sections": [
+        { "heading": "Reanalysis", "text": "A historical estimate produced by combining a numerical model with available observations. It is not the same as a direct measurement at every grid location." },
+        { "heading": "Grid point", "text": "A coordinate in a gridded dataset. TERRA's selected NASA POWER point uses its nearest model grid cell; it does not average a whole region." },
+        { "heading": "Coverage", "text": "The fraction of expected records available for the period under the app's stated rules. Low or incomplete coverage can affect interpretation." },
+        { "heading": "Sen slope", "text": "The median of pairwise slopes, used here as a robust estimate of monotonic change per year." },
+        { "heading": "p-value and q-value", "text": "A p-value measures how unusual data at least this extreme would be under a null model and its assumptions; it is not the probability the null is true. TERRA's q-value is the Benjamini–Hochberg adjusted value across selected locations in one analysis." },
+        { "heading": "Forecast and observation", "text": "A forecast is model output for future or current conditions. An observation is a measurement; a catalog report is a record. TERRA labels these categories because they are not interchangeable." }
+      ]
+    },
+    {
+      "id": "release-notes",
+      "title": "Release notes",
+      "category": "Learn and customize",
+      "summary": "A concise record of documented capabilities and known boundaries.",
+      "level": "All levels",
+      "minutes": 2,
+      "path": "/",
+      "tags": ["release", "version", "updates", "limitations"],
+      "related": ["about-terra", "data-sources", "troubleshooting"],
+      "sections": [
+        { "heading": "Current documented capabilities", "text": "This Learning Center documents the existing Overview, Earth Explorer, Weather, Events, Climate trends, Space explorer, Guide, Alerts, Research notes, and Data sources routes as inspected on 2026-11-14." },
+        { "heading": "Known limits", "items": ["The Learning Center's canonical article text is English and its translation coverage is incomplete.", "No user authentication or private investigations exist.", "Earth Explorer does not provide every hazard layer described in broad Earth-observation visions.", "Trend analysis is limited to four NASA POWER variables and six preset point locations."] }
+      ]
+    }
+  ]
+}

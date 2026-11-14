@@ -1,0 +1,26 @@
+{
+  "ur-PK": {
+    "Online — reconnecting may refresh live observations.": "آن لائن — دوبارہ رابطہ ہونے پر تازہ مشاہدات اپ ڈیٹ ہو سکتے ہیں۔",
+    "Offline — live Earth and space data cannot refresh. Measurements still visible were fetched earlier; check their source timestamps and treat them as stale.": "آف لائن — زمین اور خلا کے تازہ ڈیٹا اپ ڈیٹ نہیں ہو سکتے۔ اسکرین پر موجود پیمائشیں پہلے حاصل کی گئی تھیں؛ ان کے ماخذ کے اوقات دیکھیں اور انہیں پرانا سمجھیں۔",
+    "A TERRA update is ready.": "TERRA کی تازہ کاری دستیاب ہے۔",
+    "Update now": "ابھی تازہ کاری کریں"
+  },
+  "es-ES": {
+    "Online — reconnecting may refresh live observations.": "En línea: al recuperar la conexión, se actualizarán las observaciones disponibles.",
+    "Offline — live Earth and space data cannot refresh. Measurements still visible were fetched earlier; check their source timestamps and treat them as stale.": "Sin conexión: no se pueden actualizar los datos de la Tierra y el espacio. Las mediciones visibles se obtuvieron antes; consulta sus marcas de tiempo y considéralas desactualizadas.",
+    "A TERRA update is ready.": "Hay una actualización de TERRA disponible.",
+    "Update now": "Actualizar ahora"
+  },
+  "ar": {
+    "Online — reconnecting may refresh live observations.": "متصل — قد يؤدي استعادة الاتصال إلى تحديث المشاهدات المباشرة.",
+    "Offline — live Earth and space data cannot refresh. Measurements still visible were fetched earlier; check their source timestamps and treat them as stale.": "غير متصل — لا يمكن تحديث بيانات الأرض والفضاء المباشرة. جُلبت القياسات الظاهرة سابقاً؛ راجع الطوابع الزمنية للمصدر وتعامل معها كبيانات قديمة.",
+    "A TERRA update is ready.": "يتوفر تحديث لـ TERRA.",
+    "Update now": "حدّث الآن"
+  },
+  "ja-JP": {
+    "Online — reconnecting may refresh live observations.": "オンライン — 再接続すると最新の観測データが更新される場合があります。",
+    "Offline — live Earth and space data cannot refresh. Measurements still visible were fetched earlier; check their source timestamps and treat them as stale.": "オフライン — 地球・宇宙の最新データは更新できません。表示中の測定値は以前取得したものです。出典の時刻を確認し、古いデータとして扱ってください。",
+    "A TERRA update is ready.": "TERRAの更新を利用できます。",
+    "Update now": "今すぐ更新"
+  }
+}
