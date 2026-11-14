@@ -16,7 +16,9 @@ const smtpPort = integer(process.env.SMTP_PORT, 587, 1, 65535);
 const env = Object.freeze({
   NODE_ENV: process.env.NODE_ENV || 'development',
   PORT: integer(process.env.PORT, 5000, 1, 65535),
-  CLIENT_URL: process.env.CLIENT_URL || 'http://localhost:5173',
+  CLIENT_URL: process.env.CLIENT_URL || (process.env.VERCEL_PROJECT_PRODUCTION_URL
+    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    : 'http://localhost:5173'),
   MONGODB_URI: process.env.MONGODB_URI || '',
   SMTP_HOST: process.env.SMTP_HOST || '',
   SMTP_PORT: smtpPort,
@@ -35,7 +37,7 @@ const env = Object.freeze({
   CACHE_TTL_SECONDS: integer(process.env.CACHE_TTL_SECONDS, 300, 0, 86400),
   RATE_LIMIT_MAX: integer(process.env.RATE_LIMIT_MAX, 250, 10, 10000),
   PROVIDER_TIMEOUT_MS: integer(process.env.PROVIDER_TIMEOUT_MS, 12000, 1000, 60000),
-  TRUST_PROXY_HOPS: integer(process.env.TRUST_PROXY_HOPS, 0, 0, 10),
+  TRUST_PROXY_HOPS: integer(process.env.TRUST_PROXY_HOPS, process.env.VERCEL ? 1 : 0, 0, 10),
 });
 
 export function validateProductionConfig(configuration = env) {

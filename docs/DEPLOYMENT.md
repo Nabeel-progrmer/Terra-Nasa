@@ -6,7 +6,7 @@ The client is a static Vite/React application and the Express API is exposed thr
 
 1. Import the repository in Vercel and set **Root Directory** to the repository root (`.`). The client imports shared JSON files from the root-level `shared` directory, so Vercel must build from the monorepo root.
 2. The root `vercel.json` selects Vite, installs development dependencies, builds only the `terra-client` workspace, publishes `client/dist`, and routes `/api/*` to the serverless Express handler in `api/[...path].js`.
-3. Set the Vercel project environment variables: `CLIENT_URL=https://terra-nasa.vercel.app`, `TRUST_PROXY_HOPS=1`, and `MONGODB_URI` to a TLS-enabled MongoDB Atlas URI. Vercel sets the production runtime mode. Add optional server-only integrations such as SMTP, Groq, NASA, and VAPID keys as needed.
+3. The API automatically allows the Vercel production and current deployment origins for CORS and trusts Vercel's proxy. Set `MONGODB_URI` to a TLS-enabled MongoDB Atlas URI for account and investigation persistence. Add optional server-only integrations such as SMTP, Groq, NASA, and VAPID keys as needed.
 4. Leave `VITE_API_BASE_URL` empty because the browser and API share the same Vercel origin. Never put server secrets in a `VITE_` variable.
 5. Deploy. If the frontend domain changes, update `CLIENT_URL` to that exact origin and redeploy.
 
@@ -22,7 +22,7 @@ The API health check uses `/api/health`; verify MongoDB readiness after deployme
 | --- | --- | --- |
 | `TRUST_PROXY_HOPS` | Vercel server environment | Set to `1` for Vercel's proxy. |
 | `VITE_API_BASE_URL` | Vercel build environment | Leave empty when frontend and API share the Vercel origin. |
-| `CLIENT_URL` | Vercel server environment | Exact allowed frontend origin for CORS. |
+| `CLIENT_URL` | Optional Vercel server environment | Override the automatically detected Vercel origin when using a separate custom frontend domain. |
 | `MONGODB_URI` | Vercel server environment | TLS-enabled database connection for persistence and accounts. |
 | `GROQ_API_KEY` | Vercel server environment | Optional server-side Guide generation. |
 | `NASA_API_KEY` | Vercel server environment | Optional higher NASA NeoWs quota. |

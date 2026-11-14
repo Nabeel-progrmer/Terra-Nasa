@@ -28,7 +28,10 @@ if (env.TRUST_PROXY_HOPS > 0) app.set('trust proxy', env.TRUST_PROXY_HOPS);
 const developmentOrigins = env.NODE_ENV === 'development'
   ? ['localhost', '127.0.0.1'].flatMap((host) => Array.from({ length: 8 }, (_, index) => `http://${host}:${5173 + index}`))
   : [];
-const allowedOrigins = new Set([env.CLIENT_URL, ...developmentOrigins]);
+const vercelOrigins = [process.env.VERCEL_URL, process.env.VERCEL_PROJECT_PRODUCTION_URL]
+  .filter(Boolean)
+  .map((domain) => `https://${domain}`);
+const allowedOrigins = new Set([env.CLIENT_URL, ...vercelOrigins, ...developmentOrigins]);
 
 app.disable('x-powered-by');
 app.use((req, res, next) => {
