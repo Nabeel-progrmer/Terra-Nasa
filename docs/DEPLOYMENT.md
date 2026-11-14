@@ -6,8 +6,8 @@ The client is a static Vite/React application and the Express API is exposed thr
 
 ### Backend project
 
-1. Import the repository into Vercel. Set **Root Directory** to `server` and **Framework Preset** to Express.
-2. Clear the custom Build Command. Vercel detects `server/index.js` as the Express application; do not use `npm run build --workspace=terra-client` for this backend-only project.
+1. Import the repository into Vercel. Set **Root Directory** to `server` and **Framework Preset** to Other.
+2. Leave Build Command empty. The explicit `server/api/[...path].js` Function handles `/api/*`; do not use `npm run build --workspace=terra-client` or the long-running `src/server.js` entrypoint for this backend-only project.
 3. `CLIENT_URL` defaults to `https://client-z2dm.vercel.app` for this backend project. Add `MONGODB_URI` for account and investigation persistence, plus optional server-only integrations such as SMTP, Groq, NASA, and VAPID keys as needed.
 4. Deploy and copy the backend's production URL.
 

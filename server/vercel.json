@@ -1,8 +1,11 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "framework": "express",
+  "framework": null,
   "buildCommand": null,
   "functions": {
-    "index.js": { "maxDuration": 60 }
-  }
+    "api/[...path].js": { "maxDuration": 60 }
+  },
+  "redirects": [
+    { "source": "/favicon.ico", "destination": "/favicon.svg", "permanent": false }
+  ]
 }
