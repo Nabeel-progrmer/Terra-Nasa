@@ -12,11 +12,12 @@ function integer(value, fallback, min, max) {
 }
 
 const smtpPort = integer(process.env.SMTP_PORT, 587, 1, 65535);
+const nodeEnv = process.env.NODE_ENV || 'development';
 
 const env = Object.freeze({
-  NODE_ENV: process.env.NODE_ENV || 'development',
+  NODE_ENV: nodeEnv,
   PORT: integer(process.env.PORT, 5000, 1, 65535),
-  CLIENT_URL: process.env.CLIENT_URL || (process.env.VERCEL
+  CLIENT_URL: process.env.CLIENT_URL || (nodeEnv === 'production'
     ? 'https://client-z2dm.vercel.app'
     : 'http://localhost:5173'),
   MONGODB_URI: process.env.MONGODB_URI || '',
@@ -37,7 +38,7 @@ const env = Object.freeze({
   CACHE_TTL_SECONDS: integer(process.env.CACHE_TTL_SECONDS, 300, 0, 86400),
   RATE_LIMIT_MAX: integer(process.env.RATE_LIMIT_MAX, 250, 10, 10000),
   PROVIDER_TIMEOUT_MS: integer(process.env.PROVIDER_TIMEOUT_MS, 12000, 1000, 60000),
-  TRUST_PROXY_HOPS: process.env.VERCEL ? 1 : integer(process.env.TRUST_PROXY_HOPS, 0, 0, 10),
+  TRUST_PROXY_HOPS: nodeEnv === 'production' ? 1 : integer(process.env.TRUST_PROXY_HOPS, 0, 0, 10),
 });
 
 export function validateProductionConfig(configuration = env) {

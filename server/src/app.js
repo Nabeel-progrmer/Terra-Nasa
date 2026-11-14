@@ -56,7 +56,9 @@ app.use(cors({
   allowedHeaders: ['Content-Type', 'X-Request-Id'],
   maxAge: 600,
 }));
-app.use(async (_req, _res, next) => {
+app.use(async (req, _res, next) => {
+  const needsDatabase = /^\/api\/(?:health|config-status|auth|account|investigations|alerts)(?:\/|$)/.test(req.path);
+  if (!needsDatabase) return next();
   try {
     await connectDatabase();
   } catch (error) {
