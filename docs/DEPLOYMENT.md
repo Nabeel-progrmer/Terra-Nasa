@@ -23,7 +23,7 @@ For local development, create `backend/.env` from `backend/.env.example` and run
 
 ## Single Vercel monorepo project
 
-When deploying this repository from its root with the root `vercel.json`, the frontend uses same-origin `/api` requests, served by `api/[...path].js`; leave `VITE_API_BASE_URL` unset. This avoids browser cross-origin restrictions for the integrated Vercel deployment.
+When deploying from the repository root, the root `vercel.json` proxies `/api/*` to the Render API. Leave `VITE_API_BASE_URL` unset so browser requests stay same-origin and bypass browser CORS restrictions.
 
 ## Separate Vercel projects
 
