@@ -23,7 +23,7 @@ For local development, create `backend/.env` from `backend/.env.example` and run
 
 ## Single Vercel monorepo project
 
-When deploying from the repository root, the root `vercel.json` proxies `/api/*` to the Render API. Leave `VITE_API_BASE_URL` unset so browser requests stay same-origin and bypass browser CORS restrictions.
+The frontend defaults to the live Render API in production, so `VITE_API_BASE_URL` can stay unset. If you set it in Vercel, use `https://terra-nasa-1.onrender.com`. The Render service allows the production frontend origin for CORS. The root and client Vercel configs also proxy `/api/*` to Render for direct same-origin API access.
 
 ## Separate Vercel projects
 
@@ -37,7 +37,7 @@ When deploying from the repository root, the root `vercel.json` proxies `/api/*`
 
 ### Frontend project
 
-For a frontend project whose Root Directory is `client`, `client/vercel.json` proxies `/api/*` to the Render API. Leave `VITE_API_BASE_URL` unset, and set the Render `CLIENT_URL` to the exact production frontend origin (`https://terra-nasa-ta7u.vercel.app` for the current deployment). Redeploy both projects after changing this configuration. For a frontend hosted somewhere without a same-origin API proxy, set `VITE_API_BASE_URL` to the backend's HTTPS origin and allow that frontend origin in backend `CLIENT_URL`.
+For a frontend project whose Root Directory is `client`, `client/vercel.json` proxies `/api/*` to the Render API. The frontend can also call the Render origin directly; set `VITE_API_BASE_URL` only when using a different backend, and allow the exact frontend origin in backend `CLIENT_URL`.
 
 ## Database and serverless limits
 

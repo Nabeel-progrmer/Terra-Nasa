@@ -1,8 +1,8 @@
 const configuredBaseUrl = import.meta.env.VITE_API_BASE_URL?.trim() || '';
-// The monorepo Vercel deployment serves /api through api/[...path].js, and
-// local Vite proxies /api to the development server. Separate frontend hosts
-// can set VITE_API_BASE_URL to their backend origin at build time.
-const apiBaseUrl = configuredBaseUrl.replace(/\/+$/, '');
+const productionApiUrl = 'https://terra-nasa-1.onrender.com';
+// Local Vite uses its /api proxy. Production defaults to the live Render API;
+// deployments with a different API can override it through VITE_API_BASE_URL.
+const apiBaseUrl = (configuredBaseUrl || (import.meta.env.PROD ? productionApiUrl : '')).replace(/\/+$/, '');
 
 export function apiUrl(path) {
   if (!path.startsWith('/')) throw new TypeError('TERRA API paths must start with /.');
