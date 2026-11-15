@@ -2,6 +2,17 @@
 
 The client is a static Vite/React application. The Express API can run as a persistent Render web service (recommended when scheduled push delivery is needed) or through the included Vercel serverless adapters. Vercel does not keep a process running between requests, so periodic push delivery is unavailable in serverless mode.
 
+## Cloudflare Pages frontend
+
+The frontend is ready to deploy as a Cloudflare Pages static site. In the Pages project settings, use:
+
+- **Root directory:** `client`
+- **Build command:** `npm run build`
+- **Build output directory:** `dist`
+- **Node.js version:** `20` or newer
+
+Set `VITE_API_BASE_URL` in the Pages project's Production environment to the HTTPS origin of the deployed API (for example, `https://your-api.example.com`), then redeploy. The Pages `_redirects` file keeps client-side routes working on direct navigation, and `_headers` keeps the service worker and web manifest revalidating. Set the API's `CLIENT_URL` to the Pages site's exact HTTPS origin so browser requests and account cookies can use the API.
+
 ## Render persistent backend
 
 The repository `render.yaml` defines a Node.js web service with root directory `backend`, build command `npm install`, start command `npm start`, and health check `/health`. Connect the repository as a Render Blueprint or create a Node web service with those settings. Render provides `PORT`; the server binds to `0.0.0.0`.
