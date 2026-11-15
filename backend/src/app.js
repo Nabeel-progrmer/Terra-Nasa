@@ -23,6 +23,7 @@ import pdsRoutes from './routes/pds.js';
 import geocodingRoutes from './routes/geocoding.js';
 import authRoutes from './routes/auth.js';
 import { connectDatabase } from './services/database.js';
+import { healthHandler } from './routes/health.js';
 
 const app = express();
 if (env.TRUST_PROXY_HOPS > 0) app.set('trust proxy', env.TRUST_PROXY_HOPS);
@@ -89,6 +90,7 @@ app.use(express.json({ limit: '256kb', strict: true }));
 app.use(express.urlencoded({ extended: false, limit: '32kb', parameterLimit: 50 }));
 
 app.get('/', (_req, res) => res.json({ name: 'TERRA API', status: 'online', version: '1.0.0', docs: '/api' }));
+app.get('/health', healthHandler);
 app.get('/api', (_req, res) => res.json({
   name: 'TERRA API', version: '1.0.0',
   endpoints: [

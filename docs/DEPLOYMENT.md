@@ -1,39 +1,47 @@
-# Production deployment
+﻿# Production deployment
 
-The client is a static Vite/React application and the Express API is exposed through a Vercel serverless function. The function reuses MongoDB connections while warm, but Vercel does not keep a process running between requests, so the periodic push-alert scheduler is not available in this deployment mode.
+The client is a static Vite/React application. The Express API can run as a persistent Render web service (recommended when scheduled push delivery is needed) or through the included Vercel serverless adapters. Vercel does not keep a process running between requests, so periodic push delivery is unavailable in serverless mode.
+
+## Render persistent backend
+
+The repository `render.yaml` defines a Node.js web service with root directory `backend`, build command `npm install`, start command `npm start`, and health check `/health`. Connect the repository as a Render Blueprint or create a Node web service with those settings. Render provides `PORT`; the server binds to `0.0.0.0`.
+
+Set `CLIENT_URL` to the exact HTTPS origin of the deployed frontend. Add `MONGODB_URI` for account, investigation, and push-subscription persistence; public provider APIs can run without MongoDB, while persistence-backed routes return an unavailable response. Add SMTP, Groq, NASA, and VAPID settings only for features that need them. Use the names in [`../backend/.env.example`](../backend/.env.example); keep secrets in Render's environment settings.
+
+For local development, create `backend/.env` from `backend/.env.example` and run `npm run dev` from the repository root. To start only the backend, run `npm start --prefix backend`. Health endpoints are `/health` and `/api/health`.
 
 ## Separate Vercel projects
 
 ### Backend project
 
-1. Import the repository into Vercel. Set **Root Directory** to `server` and **Framework Preset** to Other.
-2. Leave Build Command empty. The explicit `server/api/[...path].js` Function handles `/api/*`; do not use `npm run build --workspace=terra-client` or the long-running `src/server.js` entrypoint for this backend-only project.
-3. `CLIENT_URL` defaults to `https://client-z2dm.vercel.app` for this backend project. Add `MONGODB_URI` for account and investigation persistence, plus optional server-only integrations such as SMTP, Groq, NASA, and VAPID keys as needed.
+1. Import the repository into Vercel. Set **Root Directory** to `backend` and **Framework Preset** to Other.
+2. Leave Build Command empty. The `backend/api/[...path].js` function handles `/api/*`; the long-running `src/server.js` entrypoint is for Render or local use.
+3. Set `CLIENT_URL` to the exact HTTPS origin of the deployed frontend. Add `MONGODB_URI` for account and investigation persistence and optional server-only integrations as needed.
 4. Deploy and copy the backend's production URL.
 
 ### Frontend project
 
-Set `VITE_API_BASE_URL` in the frontend project's Production environment to the backend's HTTPS origin (for example, `https://your-api.vercel.app`) and redeploy the frontend. The server project allows the origin configured in `CLIENT_URL` for CORS.
+Set `VITE_API_BASE_URL` in the frontend project's Production environment to the backend's HTTPS origin (for example, `https://your-api.vercel.app`) and redeploy the frontend. The backend allows the origin configured in `CLIENT_URL` for CORS.
 
 ## Database and serverless limits
 
-The API health check uses `/api/health`; verify MongoDB readiness after deployment. MongoDB Atlas must allow network access from Vercel's serverless functions, typically through the provider's documented IP access approach. Serverless process-local rate limits and provider caches are per instance and are not globally shared. Push subscriptions can be stored, but periodic alert delivery requires a separately scheduled job and is not run by the Express function.
+The health endpoints are `/health` and `/api/health`; verify MongoDB readiness after deployment. MongoDB Atlas must allow network access from the hosting provider. Serverless process-local rate limits and provider caches are per instance and are not globally shared. Push subscriptions can be stored, but periodic alert delivery needs a persistent process or separate scheduler.
 
 ## Required and optional configuration
 
 | Variable | Where | Purpose |
 | --- | --- | --- |
-| `VITE_API_BASE_URL` | Frontend Vercel project | HTTPS origin of the backend project. |
-| `CLIENT_URL` | Backend Vercel project | Defaults to the current frontend origin; override for a different frontend domain. |
-| `MONGODB_URI` | Backend Vercel project | TLS-enabled database connection for persistence and accounts. |
-| `GROQ_API_KEY` | Backend Vercel project | Optional server-side Guide generation. |
-| `NASA_API_KEY` | Backend Vercel project | Optional higher NASA NeoWs quota. |
-| `VAPID_PUBLIC_KEY`, `VAPID_PRIVATE_KEY`, `VAPID_SUBJECT` | Backend Vercel project | Push subscription configuration; never expose the private key to the frontend. Periodic delivery needs a separate scheduler. |
+| `PORT` | Render/local backend | HTTP port; Render sets it automatically. |
+| `CLIENT_URL` | Backend host | Exact allowed frontend origin; use HTTPS in production. |
+| `MONGODB_URI` | Backend host | MongoDB connection for accounts, investigations, and alerts. |
+| `SMTP_HOST`, `SMTP_PORT`, `SMTP_SECURE`, `SMTP_USER`, `SMTP_PASSWORD`, `SMTP_FROM` | Backend host | Optional account email and verification flows. |
+| `GROQ_API_KEY`, `GROQ_MODEL` | Backend host | Optional server-side Guide generation. |
+| `NASA_API_KEY` | Backend host | Optional higher NASA NeoWs quota. |
+| `VAPID_PUBLIC_KEY`, `VAPID_PRIVATE_KEY`, `VAPID_SUBJECT` | Backend host | Push configuration; never expose the private key to the frontend. |
+| `CACHE_TTL_SECONDS`, `RATE_LIMIT_MAX`, `PROVIDER_TIMEOUT_MS`, `TRUST_PROXY_HOPS`, `ALERT_CHECK_INTERVAL_MS` | Backend host | Backend cache, request limits, timeouts, proxy, and alert schedule. |
 
-Use the variable names in [`.env.example`](../.env.example) as the complete application configuration reference. Never put database credentials, Groq keys, NASA keys, SMTP credentials, or the VAPID private key in `VITE_` variables or source control. Configure HTTPS, Atlas network access/backups, and provider credentials in Vercel's encrypted environment settings.
+Never put database credentials, Groq keys, NASA keys, SMTP credentials, or the VAPID private key in `VITE_` variables or source control. Configure provider credentials in the host's encrypted environment settings.
 
 ## Verification and limitations
 
-After deployment, verify the backend's `/api/health`, CORS from the frontend origin, MongoDB readiness, and each configured provider independently. Test PWA installation on actual supported devices and test offline behavior after the first successful load. API data is not available offline.
-
-The build can be verified from this workspace, but live Vercel deployment, production credentials, Atlas access, and device-specific PWA behavior must be verified in their respective environments.
+After deployment, verify `/health`, CORS from the frontend origin, MongoDB readiness, and each configured provider independently. Live deployment, production credentials, database access, and device-specific push delivery must be verified in their respective environments.

@@ -5,9 +5,11 @@ Last checked: 2026-11-15.
 ## Automated checks
 
 - Client: `npm test` — 14 test files passed, 62 tests passed.
-- Server: `npm run test:server` — 6 test files passed, 63 tests passed, 1 skipped.
+- Server: `npm run test:server` — 6 test files passed, 65 tests passed, 1 skipped.
 - Client production build: `npm run build --prefix client` — passed.
-- The client suite checks page behavior, localization, PWA handling, stale/offline state, selected provider-response flows, and submitting a single-location trend analysis. The server suite checks request validation, response normalization, failure handling, source metadata, atmosphere and astronomy endpoints, PDS decoding, and NASA POWER trend behavior using deterministic fixtures.
+- Backend install: `npm ci --prefix backend` — passed with the synchronized lockfile.
+- Backend dependency audit: `npm audit --prefix backend` — 0 vulnerabilities.
+- The client suite checks page behavior, localization, PWA handling, stale/offline state, selected provider-response flows, and submitting a single-location trend analysis. The server suite checks request validation, health endpoints, production configuration diagnostics, response normalization, failure handling, source metadata, atmosphere and astronomy endpoints, PDS decoding, and NASA POWER trend behavior using deterministic fixtures.
 
 Chart tests emit non-fatal Recharts zero-size-container warnings in the test DOM. They do not fail the suite.
 

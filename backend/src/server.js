@@ -54,7 +54,7 @@ async function startServer() {
   }
 
   httpServer = await new Promise((resolve, reject) => {
-    const server = app.listen(env.PORT, () => resolve(server));
+    const server = app.listen(env.PORT, '0.0.0.0', () => resolve(server));
     server.once('error', reject);
   }).catch((error) => {
     console.error(`TERRA could not listen on port ${env.PORT}: ${error.message}`);

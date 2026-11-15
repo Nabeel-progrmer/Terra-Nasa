@@ -21,9 +21,9 @@ The language selector offers **English and Urdu**. English is canonical. Urdu tr
 
 1. Install Node.js 20 or newer.
 2. Install dependencies with `npm install` from the project root.
-3. Configure server settings in `.env` when needed. MongoDB is required for account and investigation persistence; SMTP is required for account email; VAPID keys are required for push notifications. Do not commit secrets.
+3. Configure backend settings in `backend/.env` from [`backend/.env.example`](backend/.env.example) when needed. MongoDB is required for account and investigation persistence; SMTP is required for account email; VAPID keys are required for push notifications. Do not commit secrets.
 4. Start the client and API with `npm run dev`.
-5. Open the Vite URL, normally `http://localhost:5173`. The API index is normally at `http://localhost:5000/api`.
+5. Open the Vite URL, normally `http://localhost:5173`. The API index is normally at `http://localhost:5000/api`; health is available at `/health` and `/api/health`.
 
 Without MongoDB, public provider pages can still work, while persistence-dependent operations report a degraded/unavailable state. Production requires HTTPS and correct client/API origin configuration. See [deployment notes](docs/DEPLOYMENT.md).
 

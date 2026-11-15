@@ -4,16 +4,16 @@
   "version": "1.0.0",
   "workspaces": [
     "client",
-    "server"
+    "backend"
   ],
   "allowScripts": {
     "esbuild@0.21.5": true
   },
   "scripts": {
-    "dev": "concurrently -k -n API,WEB \"npm run dev --prefix server\" \"npm run dev --prefix client\"",
+    "dev": "concurrently -k -n API,WEB \"npm run dev --prefix backend\" \"npm run dev --prefix client\"",
     "build": "npm run build --prefix client",
     "test": "npm run test --prefix client -- --run",
-    "test:server": "npm run test --prefix server"
+    "test:server": "npm run test --prefix backend"
   },
   "devDependencies": {
     "concurrently": "^9.1.2"

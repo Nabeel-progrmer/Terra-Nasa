@@ -3,7 +3,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const configDirectory = path.dirname(fileURLToPath(import.meta.url));
-dotenv.config({ path: path.resolve(configDirectory, '../../../.env') });
+dotenv.config({ path: path.resolve(configDirectory, '../../.env') });
 dotenv.config();
 
 function integer(value, fallback, min, max) {
@@ -17,9 +17,7 @@ const nodeEnv = process.env.NODE_ENV || 'development';
 const env = Object.freeze({
   NODE_ENV: nodeEnv,
   PORT: integer(process.env.PORT, 5000, 1, 65535),
-  CLIENT_URL: process.env.CLIENT_URL || (nodeEnv === 'production'
-    ? 'https://client-z2dm.vercel.app'
-    : 'http://localhost:5173'),
+  CLIENT_URL: process.env.CLIENT_URL || 'http://localhost:5173',
   MONGODB_URI: process.env.MONGODB_URI || '',
   SMTP_HOST: process.env.SMTP_HOST || '',
   SMTP_PORT: smtpPort,
@@ -43,7 +41,7 @@ const env = Object.freeze({
 
 export function validateProductionConfig(configuration = env) {
   if (configuration.NODE_ENV !== 'production') return;
-  if (!configuration.MONGODB_URI) throw new Error('MONGODB_URI is required in production because investigations are persisted in MongoDB.');
+  if (!configuration.MONGODB_URI) throw new Error('MONGODB_URI is required in production for account and investigation persistence.');
   let clientOrigin;
   try { clientOrigin = new URL(configuration.CLIENT_URL); } catch { throw new Error('CLIENT_URL must be a valid absolute URL.'); }
   if (clientOrigin.protocol !== 'https:') throw new Error('CLIENT_URL must use HTTPS in production.');
