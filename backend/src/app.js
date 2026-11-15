@@ -23,17 +23,11 @@ import pdsRoutes from './routes/pds.js';
 import geocodingRoutes from './routes/geocoding.js';
 import authRoutes from './routes/auth.js';
 import { connectDatabase } from './services/database.js';
+import { allowedClientOrigins } from './security/clientOrigins.js';
 import { healthHandler } from './routes/health.js';
 
 const app = express();
 if (env.TRUST_PROXY_HOPS > 0) app.set('trust proxy', env.TRUST_PROXY_HOPS);
-const developmentOrigins = env.NODE_ENV === 'development'
-  ? ['localhost', '127.0.0.1'].flatMap((host) => Array.from({ length: 8 }, (_, index) => `http://${host}:${5173 + index}`))
-  : [];
-const vercelOrigins = [process.env.VERCEL_URL, process.env.VERCEL_PROJECT_PRODUCTION_URL]
-  .filter(Boolean)
-  .map((domain) => `https://${domain}`);
-const allowedOrigins = new Set([env.CLIENT_URL, ...vercelOrigins, ...developmentOrigins]);
 
 app.disable('x-powered-by');
 app.use((req, res, next) => {
@@ -47,7 +41,7 @@ app.use(helmet({
 }));
 app.use(cors({
   origin(origin, callback) {
-    if (!origin || allowedOrigins.has(origin)) return callback(null, true);
+    if (!origin || allowedClientOrigins.has(origin)) return callback(null, true);
     const error = new Error('Origin is not allowed by the TERRA API.');
     error.status = 403;
     return callback(error);

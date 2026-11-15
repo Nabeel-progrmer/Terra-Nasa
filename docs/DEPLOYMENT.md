@@ -37,7 +37,7 @@ When deploying this repository from its root with the root `vercel.json`, the fr
 
 ### Frontend project
 
-Set `VITE_API_BASE_URL` in the frontend project's Production environment to the backend's HTTPS origin (for example, `https://your-api.vercel.app`) and redeploy the frontend. The backend allows the origin configured in `CLIENT_URL` for CORS.
+For a frontend project whose Root Directory is `client`, `client/vercel.json` proxies `/api/*` to the Render API. Leave `VITE_API_BASE_URL` unset, and set the Render `CLIENT_URL` to the exact production frontend origin (`https://terra-nasa-ta7u.vercel.app` for the current deployment). Redeploy both projects after changing this configuration. For a frontend hosted somewhere without a same-origin API proxy, set `VITE_API_BASE_URL` to the backend's HTTPS origin and allow that frontend origin in backend `CLIENT_URL`.
 
 ## Database and serverless limits
 
