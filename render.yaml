@@ -10,7 +10,7 @@ services:
       - key: NODE_ENV
         value: production
       - key: CLIENT_URL
-        value: https://terra-nasa-ta7u.vercel.app
+        value: https://terra-nasa-mewr.vercel.app
       - key: MONGODB_URI
         sync: false
       - key: TRUST_PROXY_HOPS

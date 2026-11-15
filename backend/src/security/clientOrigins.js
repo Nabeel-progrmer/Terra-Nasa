@@ -12,7 +12,7 @@ const vercelOrigins = [process.env.VERCEL_URL, process.env.VERCEL_PROJECT_PRODUC
 // setting has not yet been synchronized with render.yaml.
 export const allowedClientOrigins = new Set([
   env.CLIENT_URL,
-  'https://terra-nasa-ta7u.vercel.app',
+  'https://terra-nasa-mewr.vercel.app',
   ...vercelOrigins,
   ...developmentOrigins,
 ]);
