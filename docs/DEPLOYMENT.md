@@ -14,10 +14,11 @@ For local development, create `backend/.env` from `backend/.env.example` and run
 
 ### Backend project
 
-1. Import the repository into Vercel. Set **Root Directory** to `backend` and **Framework Preset** to Other.
-2. Leave Build Command empty. The `backend/api/[...path].js` function handles `/api/*`; the long-running `src/server.js` entrypoint is for Render or local use.
-3. Set `CLIENT_URL` to the exact HTTPS origin of the deployed frontend. Add `MONGODB_URI` for account and investigation persistence and optional server-only integrations as needed.
-4. Deploy and copy the backend's production URL.
+1. Import the repository into Vercel. Set **Root Directory** to `backend` and **Framework Preset** to Express. `backend/vercel.json` selects the Express preset explicitly.
+2. Keep Vercel's Express build settings enabled. The exported Express app in `src/app.js` serves the API; `src/server.js` remains the long-running entrypoint for Render or local use.
+3. Enable **Include source files outside of the Root Directory in the Build Step**, because the Guide reads shared article data from the sibling `shared/` directory.
+4. Set `CLIENT_URL` to the exact HTTPS origin of the deployed frontend. Add `MONGODB_URI` for account and investigation persistence and optional server-only integrations as needed.
+5. Deploy and copy the backend's production URL.
 
 ### Frontend project
 
