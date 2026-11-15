@@ -21,6 +21,10 @@ Set `CLIENT_URL` to the exact HTTPS origin of the deployed frontend. Add `MONGOD
 
 For local development, create `backend/.env` from `backend/.env.example` and run `npm run dev` from the repository root. To start only the backend, run `npm start --prefix backend`. Health endpoints are `/health` and `/api/health`.
 
+## Single Vercel monorepo project
+
+When deploying this repository from its root with the root `vercel.json`, the frontend uses same-origin `/api` requests, served by `api/[...path].js`; leave `VITE_API_BASE_URL` unset. This avoids browser cross-origin restrictions for the integrated Vercel deployment.
+
 ## Separate Vercel projects
 
 ### Backend project
