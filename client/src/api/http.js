@@ -1,5 +1,6 @@
 const configuredBaseUrl = import.meta.env.VITE_API_BASE_URL?.trim() || '';
-const apiBaseUrl = configuredBaseUrl.replace(/\/+$/, '');
+const productionApiUrl = 'https://terra-nasa-1.onrender.com';
+const apiBaseUrl = (configuredBaseUrl || (import.meta.env.PROD ? productionApiUrl : '')).replace(/\/+$/, '');
 
 export function apiUrl(path) {
   if (!path.startsWith('/')) throw new TypeError('TERRA API paths must start with /.');
